@@ -1,0 +1,112 @@
+.container {
+    width: 95%;
+    position:relative;
+}
+
+.list{
+    float : right;
+    margin-right:5%;
+}
+
+.row{
+    margin-top:5%;
+}
+
+.button_book{
+    margin-left: 50%;
+}
+
+.date{
+    float : right;
+    width: 50%;
+    margin-right:5%;
+}
+
+.tickets{
+    float : right;
+    width: 30%;
+    margin-right:5%;
+}
+
+.pagination{
+    float: right;
+    margin-right: 100;
+
+}
+
+.button_search{
+    float:left;
+}
+
+.navbar{
+    border-radius: 0;
+    font-size: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.labels_register{
+    float : left;
+    margin-left:5%;
+}
+
+.list_register{
+    float :right;
+}
+
+.image{
+    height : 70%;
+    width : 40%;
+}
+
+
+td.detail_movies {
+    width:20%;
+    font-size:150%;
+}
+
+.booking_show{
+    width:50%;
+    margin:2%;
+ }
+.button{
+    width:30%;
+}
+
+.seat{
+    margin:1.6%;
+}
+
+.btn{
+    background:#99ff99;
+}
+.alphabets{
+    padding-top:1.5%;
+    padding-left:5%;
+}
+
+.naming{
+    font-size:110%;
+}
+
+.seat_arrangement{
+
+    width:60%;
+}
+
+.date_arrangement{
+    margin-top:30%;
+    float: left;
+}
+
+.eyes{
+    margin-top:0%;
+    margin-bottom:10%;
+}
+
+.eyes_font{
+    font-size
+}
+
+.seat_button{
+    width:6%;
+}

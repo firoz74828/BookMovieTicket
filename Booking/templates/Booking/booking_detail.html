@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <table class="table table-striped">
+        {% for i in Screen_Select %}
+            <form action="/seat-booking/" method="post">
+                {% csrf_token %}
+                <input type="hidden" id="movie_screen_id" name="movie_screen" value="{{i.movie_screen_id_id}}">
+                <tr>
+                    <td class="detail_movies">
+                        <input type="hidden" id="theater_screen_id" name="theater_screen" value="{{i.theater_screen_id_id}}">
+                        {{i.theater_screen_id}}
+                    </td>
+                    <td class="detail_movies">
+                        <input type="hidden" id="show_screen_id" name="show_screen" value="{{i.show_screen_id_id}}">
+
+                        <button id="{{i.show_screen_id}}" class="booking_show">
+                            {{i.show_screen_id}}
+                        </button>
+
+                    </td>
+                    <td class="detail_movies">
+                        <input type="hidden" id="date_screen_id" name="date_screen" value="{{i.date_screen_id_id}}" >
+                        {{i.date_screen_id}}
+                    </td>
+                </tr>
+            </form>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}
+
+
+<!--<script type="text/javascript">-->
+
+<!--function myFunction(button){-->
+    <!--var theater_screen = document.getElementById('theater_screen_id').value;-->
+    <!--var movie_screen = document.getElementById('movie_screen_id').value;-->
+    <!--var show_screen = document.getElementById('show_screen_id').value;-->
+    <!--var date_screen = document.getElementById('date_screen_id').value;-->
+
+    <!--$.ajax({-->
+						<!--url: '/seat-booking/',-->
+						<!--type: 'POST',-->
+						<!--data: {'theater_screen':theater_screen, 'movie_screen':movie_screen, 'show_screen':show_screen, 'date_screen':date_screen, 'csrfmiddlewaretoken': '{{csrf_token}}'},-->
+						<!--dataType: "json",-->
+
+						<!--success: function(result){-->
+							<!--alert("Success")-->
+
+						<!--},-->
+
+						<!--error: function(result){-->
+							<!--console.log(result);-->
+							<!--alert(result);-->
+
+						<!--},-->
+			<!--});-->
+
+
+
+
+<!--}-->
+
+<!--</script>-->
+
+
+
+
+<!--<div class="row">-->
+<!--<h4>-->
+<!--<div class="col-sm-3">-->
+<!--<img class="image" style="width:40%;height:30%;" src="{{i.theater_screen_id.theater_image.url}}">-->
+<!--</div>-->
+<!--<div class="col-sm-3">-->
+<!--{{i.show_screen_id}}-->
+<!--</div>-->
+<!--<div class="col-sm-3">-->
+<!--{{i.date}}-->
+<!--</div>-->
+<!--</h4>-->
+<!--</div>-->
+

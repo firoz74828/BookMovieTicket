@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+{% load staticfiles %}
+
+
+    <table><tr>
+    {% for movie in movie %}
+        <td>
+            <a href="{% url 'Booking:movie-list-detail' pk=movie.id %}">
+            <input value="{{movie.pk}}" class="image" style="width:98.5%;height:80%" type="image"
+                   src="{{movie.movie_image.url}}" alt="submit">
+            </a>
+        </td>
+        {% if forloop.last %}
+            </tr>
+        {% else %}
+            {% if forloop.counter|divisibleby:"3" %}
+                </tr><tr>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    </table>
+
+<br><br><br><br>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <div id="chart_div" style="width: 80%; height: 400px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['bar']});
+google.charts.setOnLoadCallback(chartDisplay);
+
+function chartDisplay(){
+    $.ajax({
+                        url: "/google-chart/",
+                        type: 'POST',
+                        data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+                        dataType: "json",
+                        success: function (data){
+                           console.log(data)
+
+
+                              var data = google.visualization.arrayToDataTable(data);
+
+                             var options = {
+                              chart: {
+                                title: 'Movies seats booked status',
+                              }
+                            };
+
+                              var chart = new google.charts.Bar(document.getElementById('chart_div'));
+                              chart.draw(data, google.charts.Bar.convertOptions(options));
+
+
+                        },
+                        error: function(data){
+                            console.log("fail");
+
+                        }
+    });
+
+
+
+}
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+	<div class="col-sm-4">
+            <form action="/booking-create/" method="post">
+            {% csrf_token %}
+
+
+            <label class="labels">Theater</label>
+            <select class="list" name="theater_id" id="theater_id">
+                <option value ="0" disabled selected value> -- select -- </option>
+                {% for theater in theatre %}
+                    <option value="{{theater.pk}}">{{theater.theater_name}}</option>
+                {% endfor %}
+            </select><br><br>
+
+
+            <label class="labels">Movie</label>
+            <select class="list" name="movie_id", id="movie_id">
+                <option value ="0" disabled selected value> -- select -- </option>
+                {% for movie_name in movie %}
+                    <option value="{{movie_name.pk}}">{{movie_name}}</option>
+                {% endfor %}
+            </select><br><br>
+
+
+            <label class="labels">Show</label>
+            <select class="list" name="show_id" id="show_id">
+                <option value ="0" disabled selected value> -- select -- </option>
+                {% for show_time in show %}
+                    <option value="{{show_time.pk}}">{{show_time.show}}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label class="labels">Date</label>
+            <input class="date" name="date_id" id="date_id" type="date"/>
+            <br><br>
+
+            <label class="labels">No of Tickets</label>
+            <input type="number" name="tickets_count" id="tickets_count" value="tickets_count"/>
+            <br><br><br>
+
+            <button class="button_book" type="submit">Book</button>
+                <br><br>
+
+         </form>
+    </div>
+    <div class="col-sm-8">
+        <h2 style="margin-left:30%">Movies available</h2>
+        {% if object_list %}
+            <form action="/booking/" method="get">
+                {% csrf_token %}
+                <button class="button_search" type="submit">Search</button>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <select name="theater_id_1", id="theater_id_1">
+                                    <option value ="0" disabled selected value>Theater</option>
+                                        {% for theater in theatre %}
+                                            <option value="{{theater.pk}}">{{theater.theater_name}}</option>
+                                         {% endfor %}
+                                </select>
+                            </th>
+                            <th>
+                                <select name="movie_id_1", id="movie_id_1">
+                                    <option value ="0" disabled selected value>Movie</option>
+                                    {% for movie_name in movie %}
+                                        <option value="{{movie_name.pk}}">{{movie_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </th>
+                            <th>
+                                <select name="show_id_1", id="show_id_1">
+                                    <option value ="0" disabled selected value>Show</option>
+                                    {% for show_time in show %}
+                                        <option value="{{show_time.pk}}">{{show_time.show}}</option>
+                                    {% endfor %}
+                                </select>
+                            </th>
+                            <th>Screen</th>
+                            <th>
+                                Date : <input name="date_id_1" id="date_id_1" type="date"/>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in object_list %}
+                            <tr>
+                                <td>{{obj.theater_screen_id}}</td>
+                                <td>{{obj.movie_screen_id}}</td>
+                                <td>{{obj.show_screen_id}}</td>
+                                <td>{{obj.screen_id}}</td>
+                                <td>{{obj.date}}</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        {% endfor %}
+                        {% else %}
+
+                        <div align="center">
+                               <h3>No Movies</h3>
+                        </div>
+                        <br>
+
+                    </tbody>
+
+                </table>
+
+            </form>
+        {% endif %}
+    </div>
+</div>
+
+
+<footer class="container-fluid">
+
+	<div class="pagination">
+		<span class="step-links"><b>
+		{% if page_obj.has_previous %}
+			<a href="?page={{ page_obj.previous_page_number }}">previous</a>
+		{% endif %}
+
+		<span class="current">
+			Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+		</span>
+
+		{% if page_obj.has_next %}
+			<a href="?page={{ page_obj.next_page_number }}">next</a>
+        {% endif %}
+		</b></span>
+	</div>
+</footer>
+{% endblock %}

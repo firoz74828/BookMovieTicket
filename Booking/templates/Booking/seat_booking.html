@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block content %}
+
+<input type="hidden" onload="buttonDisable()">
+<!--{% for column in data %}-->
+<!--{{column.seat}}-->
+<!--{% endfor %}-->
+{{data}}
+
+        <div class="container seat_arrangement" style="width:60%;" align="center">
+            <div class="row eyes" align="center">
+                <h2><label class="eyes_font">
+                    Eyes On Screen Here
+                </label></h2>
+            </div>
+            <hr>
+            {% for row, value in context.items %}
+                {% with forloop.counter as outer_counter %}
+                <div class="row">
+                    <div class="col-sm-1">{{row}}</div>
+                {% for column in value %}
+                     <div class="col-sm-1">
+                        <button id="{{row}}{{forloop.counter}}"  class="btn" {% if forloop.counter in list_seat %}
+                                                disabled
+                                            {% else %}
+                                                onclick="myFunction(this);"
+                                            {% endif %}>
+                            {{forloop.counter}}
+                        </button>
+                     </div>
+                {% endfor %}
+                </div>
+            {% endwith %}
+            {% endfor %}
+
+            <div class="row seat">
+                        <input type="hidden" id="theater_id" name="theater_screen" value="{{theater_booking}}">
+                        <input type="hidden" id="movie_id" name="movie_screen" value="{{movie_booking}}">
+                        <input type="hidden" id="show_id" name="show_screen" value="{{show_booking}}">
+                        <input type="hidden" id="date_id" name="show_screen" value="{{date_booking}}">
+                        <button class="btn btn-md" id="btn" type="submit" onclick="book()">Book</button>
+             </div>
+        </div>
+<script>
+ var seat_list = [];
+
+        function myFunction(button){
+            var button = document.getElementById(button.id);
+            button_id = button.id
+            if (seat_list.includes(button_id)){
+                for(i=0; i<=seat_list.length; i++)
+                {
+                   if (seat_list[i]==button_id){
+                    seat_list.splice(i, 1);
+                    button.style.background = "";
+                   }
+                }
+            }
+            else{
+                seat_list.push(button_id);
+                button.style.background = "#ff9999";
+            }
+            console.log(seat_list)
+        }
+
+    function book(){
+        var x
+        var date_id = document.getElementById("date_id").value;
+        var theater_id = document.getElementById("theater_id").value;
+        var movie_id = document.getElementById("movie_id").value;
+        var show_id = document.getElementById("show_id").value;
+        console.log(date_id);
+        console.log(theater_id);
+        console.log(movie_id);
+        console.log(show_id);
+        $.ajax({
+                        url: "/booking-create/",
+                        type: 'POST',
+                        data: {'seat_list':seat_list, 'theater_id':theater_id, 'movie_id':movie_id, 'show_id':show_id, 'date_id':date_id, 'csrfmiddlewaretoken': '{{csrf_token}}'},
+                        dataType: "json",
+                        //crossDomain:true,
+                        success: function(data){
+                            console.log("success");
+                            <!--console.log(data);-->
+                            for(i=0; i < data.length; i++){
+                                <!--console.log(data[i]);-->
+                                x = data[i]
+                                document.getElementById(x).style.background = "#b3ecff";
+                                document.getElementById(x).disabled = true;
+                            }
+                        },
+                        error: function(data){
+                            console.log("fail");
+
+                        },
+                    });
+        }
+
+
+window.addEventListener('load',
+  function() {
+    var x;
+    var seat;
+    $.ajax({
+                        url: "/seat-booked/",
+                        type: 'POST',
+                        data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+                        dataType: "json",
+                        success: function (data){
+                        console.log(data);
+                        var seat_all = data
+                        for(var seat in data){
+                            x = data[seat]
+                            document.getElementById(x).style.background = "#b3ecff";
+                            document.getElementById(x).disabled = true;
+                        }
+
+                        },
+                        error: function(data){
+                            console.log("fail");
+
+                        },
+    });
+  }, false);
+
+
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

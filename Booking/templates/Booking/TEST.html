@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="width:50%">
+{% for i in range %}
+
+<div class="row">
+{% for j in range %}
+<div class="col-sm-1">
+    <button type="submit">{{forloop.counter}}</button>
+</div>
+{% endfor %}
+</div>
+{% endfor %}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+<div class="container" style="width:50%"><div class="row seat">
+        {% for i in range %}
+            <div class="col-sm-1">
+                <button class="btn btn-secondary" id="{{forloop.counter}}" style="background: green;width:3%;height:30px;margin:0.5%;">
+                    {{forloop.counter}}
+                 </button>
+            </div>
+        {% endfor %}
+        {% if forloop.last %}
+            </div>
+        {% else %}
+            {% if forloop.counter|divisibleby:"10" %}
+                </div><div class="row seat">
+            {% endif %}
+        {% endif %}
+    </div>

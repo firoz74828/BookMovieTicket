@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}{% load staticfiles %}
+    {% if error_message %}
+        {{error_message}}
+        <a href='{% url "Booking:booking" %}'>Please click here to book again</a>
+    {% else %}
+        <a href='{% url "Booking:booking" %}'>Please find the below details of ticket booked</a>
+            <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Theater</th>
+                        <th>Movie</th>
+                        <th>Show</th>
+                        <th>Screen</th>
+                        <th>Seat Row</th>
+                        <th>Seat Column</th>
+                        <th>Date</th>
+                        <th>Date Booked</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in Ticket_Booked %}
+                            <tr>
+                                <td>{{user}}</td>
+                                <td><img class="image" src="{{obj.theater_id.theater_image.url}}"></td>
+                                <td><img class="image" src="{{obj.movie_id.movie_image.url}}"></td>
+                                <td>{{obj.show_id}}</td>
+                                <td>{{obj.screen_id}}</td>
+                                <td>{{obj.seat_row}}</td>
+                                <td>{{obj.seat_column}}</td>
+                                <td>{{obj.date_id}}</td>
+                                <td>{{obj.date_today}}</td>
+                            </tr>
+                        {% endfor %}
+
+
+                    </tbody>
+
+                </table>
+
+    {% endif %}
+{% endblock %}
