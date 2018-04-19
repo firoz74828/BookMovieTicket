@@ -101,10 +101,14 @@ window.addEventListener('load',
   function() {
     var x;
     var seat;
+     var date_id = document.getElementById("date_id").value;
+     var theater_id = document.getElementById("theater_id").value;
+     var movie_id = document.getElementById("movie_id").value;
+     var show_id = document.getElementById("show_id").value;
     $.ajax({
                         url: "/seat-booked/",
                         type: 'POST',
-                        data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+                        data: {'theater_id':theater_id, 'movie_id':movie_id, 'show_id':show_id, 'date_id':date_id,'csrfmiddlewaretoken': '{{csrf_token}}'},
                         dataType: "json",
                         success: function (data){
                         console.log(data);

@@ -211,7 +211,14 @@ def DisplayChart(request):
 
 def Seat_Booked(request):
     list_seat = []
-    booking = Booking.objects.all()
+    theater_id = request.POST.get('theater_id')
+    movie_id = request.POST.get('movie_id')
+    show_id = request.POST.get('show_id')
+    date_id = request.POST.get('date_id')
+    booking = Booking.objects.filter(theater_id = theater_id,
+                                     movie_id = movie_id,
+                                     show_id = show_id,
+                                     date_id =date_id)
     for i in booking:
         list_seat.append(i.seat);
     return HttpResponse(json.dumps(list_seat), content_type="application/json")
