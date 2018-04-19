@@ -20,7 +20,6 @@ class HomeView(View):
 # ----------------------------------------------------------------------------------------------------------------------
 
 def register(request):
-    print request.method
     username = request.POST.get('username')
     email =  request.POST.get('email')
     password =  request.POST.get('password')
@@ -84,11 +83,6 @@ def booking_create(request):
     show_id = request.POST.get('show_id')
     date_id = request.POST.get('date_id')
     booking_list = Screen_Select.objects.all()
-    print seat_list
-    print theater_id
-    print movie_id
-    print show_id
-    print date_id
 
     if theater_id is not None and theater_id != "":
         booking_list = booking_list.filter(theater_screen_id=theater_id)
