@@ -39,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/Procfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -135,29 +135,6 @@
             <path>
               <item name="BookMovieTicket" type="b2602c69:ProjectViewProjectNode" />
               <item name="BookMovieTicket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BookMovieTicket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BookMovieTicket" type="462c0819:PsiDirectoryNode" />
-              <item name="Booking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BookMovieTicket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BookMovieTicket" type="462c0819:PsiDirectoryNode" />
-              <item name="Booking" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BookMovieTicket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BookMovieTicket" type="462c0819:PsiDirectoryNode" />
-              <item name="Booking" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="Booking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BookMovieTicket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BookMovieTicket" type="462c0819:PsiDirectoryNode" />
-              <item name="Booking_Ticket_Movie" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -292,7 +269,7 @@
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
