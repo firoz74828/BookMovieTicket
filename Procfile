@@ -1,1 +1,1 @@
-web: gunicorn moviebookticket.wsgi:application  --log-file -
+web: gunicorn Booking_Ticket_Movie.wsgi:application  --log-file -
