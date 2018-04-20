@@ -12,10 +12,19 @@ from django.contrib import admin
 
 class MovieAdmin(admin.ModelAdmin):
     list_display = ['movie_name']
+class TheaterAdmin(admin.ModelAdmin):
+    list_display = ['theater_name']
+class ShowAdmin(admin.ModelAdmin):
+    list_display = ['show']
+class ScreenAdmin(admin.ModelAdmin):
+    list_display = ['screen']
+class DateAdmin(admin.ModelAdmin):
+    list_display = ['date']
+
+admin.site.register(Theater, TheaterAdmin)
 admin.site.register(Movie, MovieAdmin)
-admin.site.register(Theater)
-admin.site.register(Screen)
-admin.site.register(Show)
-admin.site.register(Date)
+admin.site.register(Show, ShowAdmin)
+admin.site.register(Screen, MovieAdmin)
+admin.site.register(Date, DateAdmin)
 admin.site.register(Booking)
-admin.site.register(Screen_Select)
+admin.site.register(Screen)
