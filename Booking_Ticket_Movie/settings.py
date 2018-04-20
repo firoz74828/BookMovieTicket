@@ -76,6 +76,7 @@ WSGI_APPLICATION = 'Booking_Ticket_Movie.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': '',
         'DATABASE_URL': 'postgres://qtqzjpeyvsgxae:63d292963cb8c076b5258d1079afdf043ee61e68021fd5a36c71b6a3f1f72c44@ec2-54-83-204-6.compute-1.amazonaws.com:5432/d42j57o6tfo6q7',
 
         'NAME': 'd42j57o6tfo6q7',
@@ -86,8 +87,6 @@ DATABASES = {
 
     }
 }
-DATABASES['default'] = 'dj_database_url.config()'
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 
 # Password validation
