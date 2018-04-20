@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.conf.urls import *
 from django.contrib import admin
-import settings
+from django.conf import settings
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
