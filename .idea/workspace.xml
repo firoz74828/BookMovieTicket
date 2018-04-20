@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cfc458b-fa86-4e82-af66-79e91d54eb2b" name="Default" comment="" />
+    <list default="true" id="7cfc458b-fa86-4e82-af66-79e91d54eb2b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Booking_Ticket_Movie/urls.py" afterPath="$PROJECT_DIR$/Booking_Ticket_Movie/urls.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Booking_Ticket_Movie/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -53,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/nav.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -107,12 +109,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Procfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Procfile">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Booking_Ticket_Movie/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="459">
+              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+              <folding>
+                <element signature="e#655#685#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,6 +147,7 @@
         <option value="$PROJECT_DIR$/Booking/admin.py" />
         <option value="$PROJECT_DIR$/Booking/templates/Booking/seat_booking.html" />
         <option value="$PROJECT_DIR$/templates/nav.html" />
+        <option value="$PROJECT_DIR$/Booking_Ticket_Movie/urls.py" />
       </list>
     </option>
   </component>
@@ -378,6 +383,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -431,6 +437,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -475,14 +482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Booking_Ticket_Movie/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Booking/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -519,6 +518,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Booking_Ticket_Movie/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Booking/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -527,11 +542,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/nav.html">
+    <entry file="file://$PROJECT_DIR$/Booking_Ticket_Movie/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="459">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding>
+            <element signature="e#655#685#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
