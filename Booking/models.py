@@ -10,10 +10,8 @@ from django.utils import timezone
 class Theater(models.Model):
     theater_name = models.CharField(max_length=30)
     theater_image = models.ImageField(upload_to='', blank=True, null=True)
-    # def __unicode__(self):
-    #     return self.theater_name
-    class Meta:
-        order_with_respect_to = 'theater_name'
+    def __unicode__(self):
+        return self.theater_name
 
 class Movie(models.Model):
     movie_name = models.CharField(max_length=30)
