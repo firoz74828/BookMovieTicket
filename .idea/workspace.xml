@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cfc458b-fa86-4e82-af66-79e91d54eb2b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html" afterPath="$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html" />
+      <change beforePath="$PROJECT_DIR$/Booking/templates/Booking/index.html" afterPath="$PROJECT_DIR$/Booking/templates/Booking/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,8 +38,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="272">
+              <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -106,9 +106,9 @@
         <option value="$PROJECT_DIR$/Booking_Ticket_Movie/settings.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/Booking/templates/Booking/index.html" />
         <option value="$PROJECT_DIR$/Booking/models.py" />
         <option value="$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html" />
+        <option value="$PROJECT_DIR$/Booking/templates/Booking/index.html" />
       </list>
     </option>
   </component>
@@ -396,8 +396,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="272">
+          <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
           <folding />
         </state>
       </provider>

@@ -5,7 +5,6 @@
 
     <table><tr>
     {% for movie in movie %}
-        {{movie.pk}}
         <td>
             <a href="{% url 'Booking:movie-list-detail' pk=movie.id %}">
             <input value="{{movie.pk}}" class="image" style="width:98.5%;height:80%" type="image"
