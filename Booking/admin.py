@@ -13,11 +13,9 @@ from django.contrib import admin
 class MovieAdmin(admin.ModelAdmin):
     list_display = ['movie_name', 'theater_name']
 admin.site.register(Movie, MovieAdmin)
-
-admin.site.register(Theater)
+admin.site.register(Theater, MovieAdmin)
 admin.site.register(Screen)
 admin.site.register(Show)
 admin.site.register(Date)
 admin.site.register(Booking)
-admin.site.register(Movie)
 admin.site.register(Screen_Select)
