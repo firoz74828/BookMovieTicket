@@ -11,9 +11,9 @@ from django.contrib import admin
 # Register your models here.
 
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ['movie_name', 'theater_name']
+    list_display = ['movie_name']
 admin.site.register(Movie, MovieAdmin)
-admin.site.register(Theater, MovieAdmin)
+admin.site.register(Theater)
 admin.site.register(Screen)
 admin.site.register(Show)
 admin.site.register(Date)
