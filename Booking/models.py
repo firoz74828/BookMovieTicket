@@ -55,7 +55,7 @@ class Booking(models.Model):
     screen_id = models.ForeignKey(Screen,on_delete=models.CASCADE)
     seat = models.CharField(max_length=20)
     date_id  = models.ForeignKey(Date, on_delete=models.CASCADE)
-    date_today = models.DateTimeField(default=datetime.now, editable=False)
+    date_today = models.DateTimeField(default=datetime.datetime.now(), editable=False)
 
     class Meta:
         unique_together = ("theater_id", "movie_id", "show_id" ,"screen_id", "seat", "date_id")
