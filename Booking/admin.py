@@ -6,6 +6,13 @@ from .models import *
 
 # Register your models here.
 
+from django.contrib import admin
+
+# Register your models here.
+
+class MovieAdmin(admin.ModelAdmin):
+    list_display = ['movie_name', 'theater_name']
+admin.site.register(Movie, MovieAdmin)
 
 admin.site.register(Theater)
 admin.site.register(Screen)
