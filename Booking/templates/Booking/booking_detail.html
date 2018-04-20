@@ -4,15 +4,15 @@
 
     <table class="table table-striped">
         {% for i in Screen_Select %}
-        {{i.movie_screen_id_id}}
-        {{i.theater_screen_id_id}}
+        {{i.movie_screen_id_id.movie_name}}
+        {{i.theater_screen_id_id.theater_name}}
             <form action="/seat-booking/" method="post">
                 {% csrf_token %}
                 <input type="hidden" id="movie_screen_id" name="movie_screen" value="{{i.movie_screen_id_id}}">
                 <tr>
                     <td class="detail_movies">
                         <input type="hidden" id="theater_screen_id" name="theater_screen" value="{{i.theater_screen_id_id}}">
-                        {{i.theater_screen_id}}
+                        {{i.theater_screen_id.}}
                     </td>
                     <td class="detail_movies">
                         <input type="hidden" id="show_screen_id" name="show_screen" value="{{i.show_screen_id_id}}">
