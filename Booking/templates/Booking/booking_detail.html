@@ -4,6 +4,8 @@
 
     <table class="table table-striped">
         {% for i in Screen_Select %}
+        {{i.movie_screen_id}}
+        {{i.theater_screen_id}}
             <form action="/seat-booking/" method="post">
                 {% csrf_token %}
                 <input type="hidden" id="movie_screen_id" name="movie_screen" value="{{i.movie_screen_id_id}}">
