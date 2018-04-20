@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7cfc458b-fa86-4e82-af66-79e91d54eb2b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html" afterPath="$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html" />
-      <change beforePath="$PROJECT_DIR$/Booking/templates/Booking/index.html" afterPath="$PROJECT_DIR$/Booking/templates/Booking/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,17 +25,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="booking_detail.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="booking_detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+            <state relative-caret-position="340">
+              <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -108,8 +107,8 @@
         <option value="$PROJECT_DIR$/Booking_Ticket_Movie/settings.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html" />
         <option value="$PROJECT_DIR$/Booking/templates/Booking/index.html" />
+        <option value="$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html" />
       </list>
     </option>
   </component>
@@ -387,18 +386,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding />
         </state>
       </provider>
