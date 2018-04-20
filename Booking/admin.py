@@ -24,6 +24,6 @@ class DateAdmin(admin.ModelAdmin):
 admin.site.register(Theater, TheaterAdmin)
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(Show, ShowAdmin)
-admin.site.register(Screen, MovieAdmin)
+admin.site.register(Screen, ScreenAdmin)
 admin.site.register(Date, DateAdmin)
 admin.site.register(Booking)
