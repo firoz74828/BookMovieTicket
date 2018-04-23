@@ -16,12 +16,15 @@
                 <a class="navbar-brand" href='{% url "Booking:movie-list" %}'>Movies</a>
             </div>
 
-            <div class="nav navbar-nav navbar-center">
-                <input id="movies_filter" name="movies_filter" type="text">
-                <button onclick="Movies_Filter();">
-                    <span class="glyphicon glyphicon-search"></span>
-                </button>
-            </div>
+            <form action="/movie-list/" method="post">
+                {% csrf_token %}
+                <div class="nav navbar-nav navbar-center">
+                    <input id="movies_filter" name="movies_filter" type="text">
+                    <button onclick="Movies_Filter();">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </div>
+            </form>
         {% endif %}
         </div>
     </nav>
