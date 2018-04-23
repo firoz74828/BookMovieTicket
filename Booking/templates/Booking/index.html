@@ -2,42 +2,25 @@
 {% block content %}
 {% load staticfiles %}
 
-<div class="container-fluid">
+
+
+    <table><tr>
     {% for movie in movie %}
-    <div class="row">
-        <div class="col-sm-4">
+        <td>
             <a href="{% url 'Booking:movie-list-detail' pk=movie.id %}">
             <input value="{{movie.pk}}" class="image" style="width:98.5%;height:80%" type="image"
                    src="{{movie.movie_image.url}}" alt="submit">
             </a>
-        </div>
+        </td>
         {% if forloop.last %}
-            </div>
+            </tr>
         {% else %}
             {% if forloop.counter|divisibleby:"3" %}
-                </div>
+                </tr><tr>
             {% endif %}
         {% endif %}
     {% endfor %}
-</div>
-
-    <!--<table><tr>-->
-    <!--{% for movie in movie %}-->
-        <!--<td>-->
-            <!--<a href="{% url 'Booking:movie-list-detail' pk=movie.id %}">-->
-            <!--<input value="{{movie.pk}}" class="image" style="width:98.5%;height:80%" type="image"-->
-                   <!--src="{{movie.movie_image.url}}" alt="submit">-->
-            <!--</a>-->
-        <!--</td>-->
-        <!--{% if forloop.last %}-->
-            <!--</tr>-->
-        <!--{% else %}-->
-            <!--{% if forloop.counter|divisibleby:"3" %}-->
-                <!--</tr><tr>-->
-            <!--{% endif %}-->
-        <!--{% endif %}-->
-    <!--{% endfor %}-->
-    <!--</table>-->
+    </table>
 
 <br><br><br><br>
 
@@ -84,3 +67,21 @@ function chartDisplay(){
 </script>
 
 {% endblock %}
+<!--<div class="container-fluid">-->
+    <!--{% for movie in movie %}-->
+    <!--<div class="row">-->
+        <!--<div class="col-sm-4">-->
+            <!--<a href="{% url 'Booking:movie-list-detail' pk=movie.id %}">-->
+            <!--<input value="{{movie.pk}}" class="image" style="width:98.5%;height:80%" type="image"-->
+                   <!--src="{{movie.movie_image.url}}" alt="submit">-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--{% if forloop.last %}-->
+            <!--</div>-->
+        <!--{% else %}-->
+            <!--{% if forloop.counter|divisibleby:"3" %}-->
+                <!--</div>-->
+            <!--{% endif %}-->
+        <!--{% endif %}-->
+    <!--{% endfor %}-->
+<!--</div>-->
