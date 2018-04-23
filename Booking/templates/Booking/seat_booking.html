@@ -16,10 +16,10 @@
             <hr>
             {% for row, value in context.items %}
                 {% with forloop.counter as outer_counter %}
-                <div class="row">
-                    <div class="col-sm-1">{{row}}</div>
+                <div class="row" style="margin-left:10%;margin-right:0%;height:5px;">
+                    <div class="col-sm-1" style="width:7%;height:3%;margin-top:1%;">{{row}}</div>
                 {% for column in value %}
-                     <div class="col-sm-1">
+                     <div class="col-sm-1" style="width:7%;height:1%;">
                         <button id="{{row}}{{forloop.counter}}"  class="btn" {% if forloop.counter in list_seat %}
                                                 disabled
                                             {% else %}
@@ -28,7 +28,13 @@
                             {{forloop.counter}}
                         </button>
                      </div>
+                    {% if forloop.counter|divisibleby:5 %}
+                    <div class="col-sm-1 seats" style="width:7%;height:3%;margin-top:1%;"></div>
+                    {% endif %}
                 {% endfor %}
+                {% if forloop.counter|divisibleby:5 %}
+                    </div><div class="row">
+                {% endif %}
                 </div>
             {% endwith %}
             {% endfor %}
@@ -38,7 +44,7 @@
                         <input type="hidden" id="movie_id" name="movie_screen" value="{{movie_booking}}">
                         <input type="hidden" id="show_id" name="show_screen" value="{{show_booking}}">
                         <input type="hidden" id="date_id" name="show_screen" value="{{date_booking}}">
-                        <button class="btn btn-md" id="btn" type="submit" onclick="book()">Book</button>
+                        <button class="btn-md book_button" id="btn" type="submit" onclick="book()">Book</button>
              </div>
         </div>
 <script>

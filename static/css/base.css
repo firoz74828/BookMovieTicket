@@ -1,6 +1,7 @@
 .container {
-    width: 95%;
+    width: 100%;
     position:relative;
+    background:#b8b894;
 }
 
 .list{
@@ -72,12 +73,8 @@ td.detail_movies {
     width:30%;
 }
 
-.seat{
-    margin:1.6%;
-}
-
 .btn{
-    background:#99ff99;
+    background: #79ff4d;
 }
 .alphabets{
     padding-top:1.5%;
@@ -89,7 +86,6 @@ td.detail_movies {
 }
 
 .seat_arrangement{
-
     width:60%;
 }
 
@@ -114,3 +110,13 @@ td.detail_movies {
 .navbar-center{
     margin:1%;
 }
+
+.seats{
+    width:5%;
+    height:5%;
+}
+
+.book_button{
+    background:#8080ff;
+}
+
