@@ -11,6 +11,14 @@
             <div class="nav navbar-nav navbar-right">
                 <a class="navbar-brand" href='{% url "logout" %}'>Logout&ensp;({{user}})</a>
             </div>
+
+            <div class="nav navbar-nav center">
+                <input type="text">
+                <button>
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </div>
+
             <div class="nav navbar-nav left">
                 <a class="navbar-brand" href='{% url "Booking:movie-list" %}'>Movies</a>
             </div>

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cfc458b-fa86-4e82-af66-79e91d54eb2b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Booking/templates/Booking/index.html" afterPath="$PROJECT_DIR$/Booking/templates/Booking/index.html" />
+      <change beforePath="$PROJECT_DIR$/templates/nav.html" afterPath="$PROJECT_DIR$/templates/nav.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,20 +53,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/nav.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="732">
+            <state relative-caret-position="1395">
               <caret line="83" column="30" lean-forward="true" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#a#0;n#td#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
@@ -139,12 +139,12 @@
         <option value="$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html" />
         <option value="$PROJECT_DIR$/Booking/models.py" />
         <option value="$PROJECT_DIR$/Booking/admin.py" />
-        <option value="$PROJECT_DIR$/templates/nav.html" />
         <option value="$PROJECT_DIR$/Booking_Ticket_Movie/settings.py" />
         <option value="$PROJECT_DIR$/Booking_Ticket_Movie/urls.py" />
         <option value="$PROJECT_DIR$/Booking/templates/Booking/seat_booking.html" />
         <option value="$PROJECT_DIR$/static/css/base.css" />
         <option value="$PROJECT_DIR$/Booking/templates/Booking/index.html" />
+        <option value="$PROJECT_DIR$/templates/nav.html" />
       </list>
     </option>
   </component>
@@ -228,6 +228,11 @@
               <item name="moviebookticket" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="moviebookticket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="moviebookticket" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -646,14 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Booking_Ticket_Movie/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -704,11 +701,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="732">
+        <state relative-caret-position="1395">
           <caret line="83" column="30" lean-forward="true" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#input#0;n#a#0;n#td#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
