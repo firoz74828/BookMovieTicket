@@ -12,13 +12,13 @@
                 <a class="navbar-brand" href='{% url "logout" %}'>Logout&ensp;({{user}})</a>
             </div>
 
-            <div class="nav navbar-nav left">
+            <div class="nav navbar-nav navbar-left">
                 <a class="navbar-brand" href='{% url "Booking:movie-list" %}'>Movies</a>
             </div>
 
             <div class="nav navbar-nav navbar-center">
-                <input type="text">
-                <button>
+                <input id="movies_filter" name="movies_filter" type="text">
+                <button onclick="Movies_Filter();">
                     <span class="glyphicon glyphicon-search"></span>
                 </button>
             </div>
@@ -26,4 +26,29 @@
         </div>
     </nav>
 </body>
+
+<script>
+
+    function Movies_Filter()
+        {
+            var movies_filter = document.getElementById("movies_filter").value;
+            console.log(movies_filter);
+            $.ajax({
+                        url: "/movie-list",
+                        type: 'POST',
+                        data: {'movies_filter':movies_filter, 'csrfmiddlewaretoken': '{{csrf_token}}'},
+                        dataType: "json",
+                        success: function (data){
+                            console.log(data);
+
+                        },
+                        error: function(data){
+                            console.log("fail");
+                         },
+            });
+
+}
+
+
+</script>
 </html>

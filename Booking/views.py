@@ -41,30 +41,35 @@ class Booking_ListView(LoginRequiredMixin, ListView):
     template_name = 'Booking/index.html'
     paginate_by = 10
     def get_queryset(self):
-        theater_id_1 = self.request.GET.get('theater_id_1')
-        movie_id_1 = self.request.GET.get('movie_id_1')
-        show_id_1 = self.request.GET.get('show_id_1')
-        date_id_1 = self.request.GET.get('date_id_1')
-        booking_list_1 = Screen_Select.objects.all()
-
-        if theater_id_1 is not None and theater_id_1 != "":
-            booking_list_1 = booking_list_1.filter(theater_screen_id=theater_id_1)
-
-        if movie_id_1 is not None and movie_id_1 != "":
-            booking_list_1 = booking_list_1.filter(movie_screen_id=movie_id_1)
-
-        if show_id_1 is not None and show_id_1 != "":
-            booking_list_1 = booking_list_1.filter(show_screen_id=show_id_1)
-
-        if date_id_1 is not None and date_id_1 != "":
-            date_check = datetime.strptime(date_id_1, '%Y-%m-%d').date()
-            booking_list_1 = booking_list_1.filter(date=date_check)
-
-        if booking_list_1:
-            return booking_list_1
+        if self.request.is_ajax():
+            movie_name = self.request.POST.get('movies_filter')
+            movie_list = (serializers.serialize("json", Movie.objects.filter(movie_name__startswith = movie_name)))
+            return HttpResponse(json.dumps(movie_list), content_type="application/json")
         else:
-            queryset = Screen_Select.objects.all()
-            return queryset
+            theater_id_1 = self.request.GET.get('theater_id_1')
+            movie_id_1 = self.request.GET.get('movie_id_1')
+            show_id_1 = self.request.GET.get('show_id_1')
+            date_id_1 = self.request.GET.get('date_id_1')
+            booking_list_1 = Screen_Select.objects.all()
+
+            if theater_id_1 is not None and theater_id_1 != "":
+                booking_list_1 = booking_list_1.filter(theater_screen_id=theater_id_1)
+
+            if movie_id_1 is not None and movie_id_1 != "":
+                booking_list_1 = booking_list_1.filter(movie_screen_id=movie_id_1)
+
+            if show_id_1 is not None and show_id_1 != "":
+                booking_list_1 = booking_list_1.filter(show_screen_id=show_id_1)
+
+            if date_id_1 is not None and date_id_1 != "":
+                date_check = datetime.strptime(date_id_1, '%Y-%m-%d').date()
+                booking_list_1 = booking_list_1.filter(date=date_check)
+
+            if booking_list_1:
+                return booking_list_1
+            else:
+                queryset = Screen_Select.objects.all()
+                return queryset
 
     def get_context_data(self, **kwargs):
         context = super(ListView, self).get_context_data(**kwargs)
