@@ -40,9 +40,10 @@
 }
 
 .navbar{
+    margin:0%;
     border-radius: 0;
     font-size: 100%;
-    font-family: 'Open Sans', sans-serif;
+
 }
 
 .labels_register{
@@ -118,5 +119,6 @@ td.detail_movies {
 
 .book_button{
     background:#8080ff;
+    width:60%;
 }
 
