@@ -2,24 +2,41 @@
 {% block content %}
 {% load staticfiles %}
 
-
-    <table><tr>
+<div class="container-fluid"><div class="row">
     {% for movie in movie %}
-        <td>
+        <div class="col-sm-3">
             <a href="{% url 'Booking:movie-list-detail' pk=movie.id %}">
             <input value="{{movie.pk}}" class="image" style="width:98.5%;height:80%" type="image"
                    src="{{movie.movie_image.url}}" alt="submit">
             </a>
-        </td>
+        </div>
         {% if forloop.last %}
-            </tr>
+            </div>
         {% else %}
             {% if forloop.counter|divisibleby:"3" %}
-                </tr><tr>
+                </div>
             {% endif %}
         {% endif %}
     {% endfor %}
-    </table>
+</div>
+
+    <!--<table><tr>-->
+    <!--{% for movie in movie %}-->
+        <!--<td>-->
+            <!--<a href="{% url 'Booking:movie-list-detail' pk=movie.id %}">-->
+            <!--<input value="{{movie.pk}}" class="image" style="width:98.5%;height:80%" type="image"-->
+                   <!--src="{{movie.movie_image.url}}" alt="submit">-->
+            <!--</a>-->
+        <!--</td>-->
+        <!--{% if forloop.last %}-->
+            <!--</tr>-->
+        <!--{% else %}-->
+            <!--{% if forloop.counter|divisibleby:"3" %}-->
+                <!--</tr><tr>-->
+            <!--{% endif %}-->
+        <!--{% endif %}-->
+    <!--{% endfor %}-->
+    <!--</table>-->
 
 <br><br><br><br>
 
