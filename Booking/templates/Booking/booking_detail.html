@@ -6,9 +6,8 @@
         <form action="{% url 'Booking:movie-list-detail' pk=movie_id.id %}" method="get">
             {% csrf_token %}
                 <td style="padding:5px;">
-                    {{date.date_screen_id}}
                     {{date.date_screen_id_id}}
-                    <input type="hidden" id="date_screen" name="date_screen" value="{{date.date_screen_id}}" >
+                    <input type="hidden" id="date_screen" name="date_screen" value="{{date.date_screen_id_id}}" >
                     <button type="submit" class="btn date-button">{{date.date_screen_id.date|date:"d"}}</button>
                 </td>
         </form>
