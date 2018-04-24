@@ -3,7 +3,7 @@
 
  <table class="table-hover"><tr style="background:black;">
     {% for date in Date %}
-        <form action="{% url 'Booking:movie-list-detail' pk=date.date_screen_id %}" method="get">
+        <form action="{% url 'Booking:movie-list-detail' pk=movie_id.id %}" method="get">
             {% csrf_token %}
                 <td style="padding:5px;">
                     <input type="hidden" id="date_screen" name="date_screen" value="{{date.date_screen_id}}" >
@@ -15,7 +15,7 @@
  </tr>
  </table>
 
-    <table class="table table-striped">
+    <table class="table table-hover">
         {% for i in Screen_Select %}
             <form action="/seat-booking/" method="post">
                 {% csrf_token %}
@@ -28,7 +28,7 @@
                     <td class="detail_movies">
                         <input type="hidden" id="show_screen_id" name="show_screen" value="{{i.show_screen_id_id}}">
 
-                        <button id="{{i.show_screen_id}}" class="booking_show">
+                        <button id="{{i.show_screen_id}}" class="btn btn-light booking_show">
                             {{i.show_screen_id.show}}
                         </button>
 
