@@ -103,9 +103,20 @@ class Movie_DetailView(LoginRequiredMixin, DetailView):
     # queryset = Theater.objects.all()
 
     def get_context_data(self, *args, **kwargs):
-        movie_name = self.get_object()
         context = super(Movie_DetailView, self).get_context_data(*args, **kwargs)
-        context['Screen_Select'] = Screen_Select.objects.filter(movie_screen_id = movie_name)
+        movie_name = self.get_object()
+        date = self.request.GET.get("date_screen")
+        print movie_name
+        print date
+        if date is not None:
+            context['Screen_Select'] = Screen_Select.objects.filter(movie_screen_id=movie_name,
+                                                                    date_screen_id = date)
+            context['Date'] = Screen_Select.objects.filter().distinct('date_screen_id').order_by('date_screen_id')
+
+        else:
+            context['Screen_Select'] = Screen_Select.objects.filter(movie_screen_id = movie_name).order_by('date_screen_id')
+            context['Date'] = Screen_Select.objects.filter().distinct('date_screen_id').order_by('date_screen_id')
+        context['movie_id'] = movie_name
         return context
 
 # ----------------------------------------------------------------------------------------------------------------------

@@ -1,6 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
+ <table class="table-hover"><tr style="background:black;">
+    {% for date in Date %}
+        <form action="{% url 'Booking:movie-list-detail' pk=movie.id %}" method="get">
+            {% csrf_token %}
+                <td style="padding:5px;">
+                    <input type="hidden" id="date_screen" name="date_screen" value="{{date.date_screen_id}}" >
+                    <button type="submit" class="btn date-button">{{date.date_screen_id__date|date:"d"}}</button>
+                </td>
+        </form>
+
+    {% endfor %}
+ </tr>
+ </table>
 
     <table class="table table-striped">
         {% for i in Screen_Select %}

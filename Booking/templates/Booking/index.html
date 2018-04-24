@@ -2,8 +2,50 @@
 {% block content %}
 {% load staticfiles %}
 
+<div class="container container-corousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for movie in context.movie_list %}
+            {% if forloop.first %}
+                <li data-target="{{forloop.counter}}" data-slide-to="{{forloop.counter0}}" class="active"></li>
+            {% else %}
+                <li data-target="{{forloop.counter}}" data-slide-to="{{forloop.counter0}}"></li>
+            {% endif %}
+
+        {% endfor %}
+    </ol>
+
+    <div class="carousel-inner">
+      {% for movie in context.movie_list %}
+        {% if forloop.first %}
+            <div class="active item">
+        {% else %}
+            <div class="item">
+        {% endif %}
+         <a href="{% url 'Booking:movie-list-detail' pk=movie.id %}">
+            <input value="{{movie.pk}}" class="image" style="width:98.5%;height:80%" type="image"
+                   src="{{movie.movie_image.url}}" alt="submit">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
 
 
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+
+<div class="container container-corousel" style="margin-top:1%;">
     <table><tr>
     {% for movie in context.movie_list %}
         <td>
@@ -21,6 +63,9 @@
         {% endif %}
     {% endfor %}
     </table>
+
+<br><br><br><br>
+</div>
 
 <br><br><br><br>
 

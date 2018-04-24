@@ -1,7 +1,6 @@
 .container {
     width: 100%;
     position:relative;
-    background:#b8b894;
 }
 
 .list{
@@ -120,5 +119,10 @@ td.detail_movies {
 .book_button{
     background: white;
     width:60%;
+}
+
+.container-corousel{
+    margin-top:0.5%;
+    width:90%;
 }
 
