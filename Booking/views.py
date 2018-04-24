@@ -106,8 +106,6 @@ class Movie_DetailView(LoginRequiredMixin, DetailView):
         context = super(Movie_DetailView, self).get_context_data(*args, **kwargs)
         movie_name = self.get_object()
         date = self.request.GET.get("date_screen")
-        print movie_name
-        print date
         if date is not None:
             context['Screen_Select'] = Screen_Select.objects.filter(movie_screen_id=movie_name,
                                                                     date_screen_id = date)
