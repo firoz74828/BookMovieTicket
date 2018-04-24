@@ -1,6 +1,7 @@
 .container {
     width: 100%;
     position:relative;
+    background:#4062a5;
 }
 
 .list{
@@ -41,7 +42,8 @@
 .navbar{
     margin:0%;
     border-radius: 0;
-    font-size: 100%;
+    font-size: 130% !important;
+    font-family: 'Open Sans', sans-serif !important;
 
 }
 
@@ -65,10 +67,12 @@ td.detail_movies {
     font-size:150%;
 }
 
-.booking_show{
-    width:50%;
+.btn-light{
+    width:20%;
     margin:2%;
- }
+    background:white;
+}
+
 .button{
     width:30%;
 }
@@ -123,6 +127,16 @@ td.detail_movies {
 
 .container-corousel{
     margin-top:0.5%;
-    width:90%;
+    width:95%;
 }
+
+.table-hover{
+    background:white;
+}
+
+.date-button{
+    margin-top:2%;
+    margin-bottom:2%;
+}
+
 

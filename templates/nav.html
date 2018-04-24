@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,53 +6,38 @@
     <title>Title</title>
 </head>
 <body>
+{% load static %}
     <nav class="navbar navbar-inverse">
-        <div class="container-fluid/">
+
+        <div class="container-fluid">
         {% if request.user.is_authenticated %}
-            <div class="nav navbar-nav navbar-right">
-                <a class="navbar-brand" href='{% url "logout" %}'>Logout&ensp;({{user}})</a>
-            </div>
-
-            <div class="nav navbar-nav navbar-left">
-                <a class="navbar-brand" href='{% url "Booking:movie-list" %}'>Movies</a>
-            </div>
-
-            <form action="/movie-list/" method="post">
-                {% csrf_token %}
-                <div class="nav navbar-nav navbar-center">
-                    <input id="movies_filter" name="movies_filter" type="text">
-                    <button onclick="Movies_Filter();">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
+                <div class="nav navbar-nav navbar-left">
+                    <img src="{% static 'media/showtogo_logo.png' %}" style="width:110%;margin-left:20px;font"/>
                 </div>
-            </form>
+
+                <div class="nav navbar-nav" style="margin-left:10%">
+                    <a class="navbar-brand" href='{% url "Booking:movie-list" %}'>Movies</a>
+                </div>
+
+                 <form action="/movie-list/" method="post">
+                    {% csrf_token %}
+                    <div class="nav navbar-nav navbar-center col-sm-6">
+                        <input id="movies_filter" name="movies_filter" type="text" style="width:80%;">
+                        <button onclick="Movies_Filter();">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </div>
+                </form>
+
+
+                <div class="nav navbar-nav navbar-right col-sm-2">
+                    <a class="navbar-brand" href='{% url "logout" %}'>Logout&ensp;({{user}})</a>
+                </div>
         {% endif %}
+
         </div>
     </nav>
+
 </body>
 
-<script>
-
-    function Movies_Filter()
-        {
-            var movies_filter = document.getElementById("movies_filter").value;
-            console.log(movies_filter);
-            $.ajax({
-                        url: "/movie-list",
-                        type: 'POST',
-                        data: {'movies_filter':movies_filter, 'csrfmiddlewaretoken': '{{csrf_token}}'},
-                        dataType: "json",
-                        success: function (data){
-                            console.log(data);
-
-                        },
-                        error: function(data){
-                            console.log("fail");
-                         },
-            });
-
-}
-
-
-</script>
 </html>
