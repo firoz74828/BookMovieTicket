@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+{{Screen_Select}}
  <table class="table-hover"><tr style="background:black;">
     {% for date in Date %}
         <form action="{% url 'Booking:movie-list-detail' pk=movie_id.id %}" method="get">
