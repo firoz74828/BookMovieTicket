@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-{{Screen_Select}}
+
  <table class="table-hover"><tr style="background:black;">
-   {% for date in Date %}
-        <form action="{% url 'Booking:movie-list-detail' pk=movie.id %}" method="get">
+    {% for date in Date %}
+        <form action="{% url 'Booking:movie-list-detail' pk=movie_id.id %}" method="get">
             {% csrf_token %}
                 <td style="padding:5px;">
                     {{date.date_screen_id}}
-                    {{date.date_screen_id_id}}
+                    {{movie_id.id}}
                     <input type="hidden" id="date_screen" name="date_screen" value="{{date.date_screen_id}}" >
-                    <button type="submit" class="btn date-button">{{date.date_screen_id__date|date:"d"}}</button>
+                    <button type="submit" class="btn date-button">{{date.date_screen_id.date|date:"d"}}</button>
                 </td>
         </form>
 
@@ -17,7 +17,7 @@
  </tr>
  </table>
 
-    <table class="table table-hover">
+    <table class="table table-striped">
         {% for i in Screen_Select %}
             <form action="/seat-booking/" method="post">
                 {% csrf_token %}
