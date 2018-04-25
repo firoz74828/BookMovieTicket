@@ -4,7 +4,7 @@
 
 <input type="hidden" onload="buttonDisable()">
 
-        <div class="container " style="width:60%;">
+        <div class="container " style="width:50%;">
             {% for row, value in context.items %}
                 {% with forloop.counter as outer_counter %}
                 <div class="row" style="margin-left:10%;margin-right:0%;height:5px;">
@@ -36,10 +36,9 @@
                         <input type="hidden" id="show_id" name="show_screen" value="{{show_booking}}">
                         <input type="hidden" id="date_id" name="show_screen" value="{{date_booking}}">
                         <button class="btn btn-md book_button" id="btn" type="submit" onclick="book()">Book</button>
-                <br><br>
              </div>
             <hr>
-            <div class="container seat_arrangement" style="width:60%;" align="center">
+            <div class="container seat_arrangement" style="width:40%;" align="center">
                 <h2><label class="eyes_font">
                     Eyes On Screen Here
                 </label></h2>
