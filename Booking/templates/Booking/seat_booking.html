@@ -4,7 +4,7 @@
 
 <input type="hidden" onload="buttonDisable()">
 
-        <div class="container " style="width:50%;">
+        <div class="container " style="width:60%;" align="center">
             {% for row, value in context.items %}
                 {% with forloop.counter as outer_counter %}
                 <div class="row" style="margin-left:10%;margin-right:0%;height:5px;">
@@ -27,7 +27,7 @@
                     </div><div class="row">
                 {% endif %}
                 </div>
-            {% endwith %}
+                {% endwith %}
             {% endfor %}
 
             <div class="row seat">
