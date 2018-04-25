@@ -115,7 +115,7 @@ class Movie_DetailView(LoginRequiredMixin, DetailView):
             context['Screen_Select'] = Screen_Select.objects.filter(movie_screen_id = movie_name).order_by('date_screen_id')
             context['Date'] = Screen_Select.objects.all().distinct('date_screen_id').order_by('date_screen_id')
         context['movie_id'] = movie_name
-        context['movie_img'] = Screen_Select.objects.filter(movie_screen_id=movie_name).distinct()
+        context['movie_img'] = Screen_Select.objects.filter(movie_screen_id=movie_name).distinct('pk')
         return context
 
 # ----------------------------------------------------------------------------------------------------------------------
