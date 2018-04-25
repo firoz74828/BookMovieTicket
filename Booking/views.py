@@ -109,16 +109,15 @@ class Movie_DetailView(LoginRequiredMixin, DetailView):
         if date is not None:
             context['Screen_Select'] = Screen_Select.objects.filter(movie_screen_id=movie_name,
                                                                     date_screen_id = date)
-            context['Date'] = Screen_Select.objects.all().distinct('date_screen_id').order_by('date_screen_id')
 
         else:
             context['Screen_Select'] = Screen_Select.objects.filter(movie_screen_id = movie_name,
                                                                     date_screen_id=1).order_by('date_screen_id')
-            context['Date'] = Screen_Select.objects.all().distinct('date_screen_id').order_by('date_screen_id')
-            context['Theater'] = Screen_Select.objects.all().distinct('theater_screen_id').order_by('theater_screen_id')
-        context['movie_id'] = movie_name
-        context['movie_img'] = Screen_Select.objects.filter(movie_screen_id=movie_name).distinct('pk')
 
+        context['movie_id'] = movie_name
+        # context['movie_img'] = Screen_Select.objects.filter(movie_screen_id=movie_name).distinct('pk')
+        context['Theater'] = Screen_Select.objects.all().distinct('theater_screen_id').order_by('theater_screen_id')
+        context['Date'] = Screen_Select.objects.all().distinct('date_screen_id').order_by('date_screen_id')
         context['show'] = Show.objects.all()
         return context
 
