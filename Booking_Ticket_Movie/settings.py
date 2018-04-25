@@ -25,7 +25,7 @@ SECRET_KEY = '%$a&$ktm4noy-v_52bs#-cn1y@hfpo^oq8ij&3-psb8hc&l1_y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['moviebookticket.herokuapp.com']
+ALLOWED_HOSTS = ['moviebookticket.herokuapp.com',"localhost"]
 
 
 # Application definition

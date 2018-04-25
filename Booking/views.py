@@ -56,6 +56,12 @@ def booking_create(request):
     date_id = request.POST.get('date_id')
     booking_list = Screen_Select.objects.all()
 
+    print seat_list
+    print theater_id
+    print movie_id
+    print show_id
+    print date_id
+
     if theater_id is not None and theater_id != "":
         booking_list = booking_list.filter(theater_screen_id=theater_id)
 
@@ -119,6 +125,7 @@ class Movie_DetailView(LoginRequiredMixin, DetailView):
         context['Theater'] = Screen_Select.objects.all().distinct('theater_screen_id').order_by('theater_screen_id')
         context['Date'] = Screen_Select.objects.all().distinct('date_screen_id').order_by('date_screen_id')
         context['show'] = Show.objects.all()
+        context['date_id'] = date
         return context
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -130,6 +137,10 @@ def Seat_Booking(request):
     movie = request.POST.get("movie_screen")
     show = request.POST.get("show_screen")
     date = request.POST.get("date_screen")
+    print theater
+    print movie
+    print show
+    print date
     booking = Booking.objects.filter(theater_id_id = theater,
                                      movie_id_id = movie,
                                      show_id_id = show,
