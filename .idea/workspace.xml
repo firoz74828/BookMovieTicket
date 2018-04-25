@@ -39,16 +39,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="booking_detail.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="booking_detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="50" />
+            <state relative-caret-position="221">
+              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#form#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="e#2401#2407#1" expanded="true" />
+                <element signature="e#2411#2417#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,7 +124,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="392">
@@ -180,8 +180,8 @@
         <option value="$PROJECT_DIR$/Booking/views.py" />
         <option value="$PROJECT_DIR$/Booking/templates/Booking/index.html" />
         <option value="$PROJECT_DIR$/Booking/templates/Booking/user_booking.html" />
-        <option value="$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html" />
         <option value="$PROJECT_DIR$/static/css/base.css" />
+        <option value="$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html" />
       </list>
     </option>
   </component>
@@ -410,7 +410,7 @@
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#form#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="e#2401#2407#1" expanded="true" />
+            <element signature="e#2411#2417#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -519,7 +519,7 @@
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#form#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="e#2401#2407#1" expanded="true" />
+            <element signature="e#2411#2417#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -798,6 +798,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="150" column="30" lean-forward="true" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/user_booking.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -811,22 +819,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Booking/templates/Booking/booking_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="50" />
+        <state relative-caret-position="221">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#form#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="e#2401#2407#1" expanded="true" />
+            <element signature="e#2411#2417#1" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="150" column="30" lean-forward="true" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
