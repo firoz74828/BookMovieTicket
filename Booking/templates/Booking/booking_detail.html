@@ -32,16 +32,18 @@
                         {{i.theater_screen_id.theater_name}}
                     </td>
                     <td class="detail_movies">
-                        <input type="hidden" id="show_screen_id" name="show_screen" value="{{i.show_screen_id_id}}">
+                        {% for show in Screen_Select %}
+                            {% if i.theater_screen_id == show.theater_screen_id %}
+                                <input type="hidden" id="show_screen_id" name="show_screen" value="{{i.show_screen_id_id}}">
 
-                        <button id="{{i.show_screen_id}}" class="btn btn-light booking_show">
-                            {{i.show_screen_id.show}}
-                        </button>
-
+                                <button id="{{i.show_screen_id}}" class="btn btn-light booking_show">
+                                    {{i.show_screen_id.show}}
+                                </button>
+                            {% endif %}
+                        {% endfor %}
                     </td>
                     <td class="detail_movies">
                         <input type="hidden" id="date_screen_id" name="date_screen" value="{{i.date_screen_id_id}}" >
-                        {{i.date_screen_id.date}}
                     </td>
                 </tr>
             </form>
