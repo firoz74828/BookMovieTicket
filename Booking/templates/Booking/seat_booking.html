@@ -4,14 +4,7 @@
 
 <input type="hidden" onload="buttonDisable()">
 
-        <div class="container seat_arrangement" style="width:60%;" align="center">
-            <div class="row eyes" align="center">
-                <h2><label class="eyes_font">
-                    Eyes On Screen Here
-                </label></h2>
-                <img src="{% static 'media/screen.jpg' %}" style="width:80%;height:80px;"/>
-            </div>
-            <hr>
+        <div class="container " style="width:60%;" align="center">
             {% for row, value in context.items %}
                 {% with forloop.counter as outer_counter %}
                 <div class="row" style="margin-left:10%;margin-right:0%;height:5px;">
@@ -45,6 +38,12 @@
                         <button class="btn btn-md book_button" id="btn" type="submit" onclick="book()">Book</button>
                 <br><br>
              </div>
+            <hr>
+            <div class="container seat_arrangement" style="width:60%;" align="center">
+                <h2><label class="eyes_font">
+                    Eyes On Screen Here
+                </label></h2>
+                <img src="{% static 'media/screen.jpg' %}" style="width:80%;height:80px;"/>
         </div>
 <script>
  var seat_list = [];
