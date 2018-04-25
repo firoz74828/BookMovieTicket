@@ -20,11 +20,12 @@ class ScreenAdmin(admin.ModelAdmin):
     list_display = ['screen']
 class DateAdmin(admin.ModelAdmin):
     list_display = ['date']
-
+class ScreenSelectAdmin(admin.ModelAdmin):
+    list_display = ['theater_screen_id_id', 'movie_screen_id_id', 'show_screen_id_id', 'screen_id_id', 'date_screen_id_id']
 admin.site.register(Theater, TheaterAdmin)
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(Show, ShowAdmin)
 admin.site.register(Screen, ScreenAdmin)
 admin.site.register(Date, DateAdmin)
 admin.site.register(Booking)
-admin.site.register(Screen_Select)
+admin.site.register(Screen_Select, ScreenSelectAdmin)
