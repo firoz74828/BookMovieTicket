@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+{{queryset}}
 <table class="table table-condensed">
     <thead>
       <tr>
@@ -16,9 +16,9 @@
     <tbody>
     {% for booking in queryset %}
         <tr>
-            <td>{{booking.theater_id.theater_name}}</td>
-            <td>{{booking.movie_id.movie_id.movie_name}}</td>
-            <td>{{booking.show_id.show}}</td>
+            <td>{{booking.theater_id_theater_name}}</td>
+            <td>{{booking.movie_id.movie_id}}</td>
+            <td>{{booking.show_id__show}}</td>
             <td>{{booking.screen_id.screen_id}}</td>
             <td>{{booking.seat}}</td>
             <td>{{booking.date_id.date_id}}</td>
