@@ -5,7 +5,7 @@
                    src="{{movie_id.movie_image.url}}" alt="submit">
 </div>
 
- <table class="table-striped" ><tr>
+ <table class="table-striped" ><tr class="noborder">
     {% for date in Date %}
         <form action="{% url 'Booking:movie-list-detail' pk=movie_id.id %}" method="get">
             {% csrf_token %}
