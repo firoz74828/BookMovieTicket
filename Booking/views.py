@@ -209,3 +209,9 @@ def Seat_Booked(request):
     for i in booking:
         list_seat.append(i.seat);
     return HttpResponse(json.dumps(list_seat), content_type="application/json")
+
+class UserBookings(LoginRequiredMixin, ListView):
+    template_name = 'Booking/user_booking.html'
+    def get_queryset(self):
+        queryset = Booking.objects.filter(user = self.request.user)
+        return queryset

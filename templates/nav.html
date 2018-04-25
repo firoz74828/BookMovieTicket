@@ -24,14 +24,14 @@
                     <!--</a>-->
                 <!--</div>-->
                 <div class="nav navbar-left" style="margin-right:5%">
-                    <a class="navbar-brand" href='#' style="font-color:red;font-weight:200%;">showTOGO</a>
+                    <a class="navbar-brand" href='{% url "Booking:movie-list" %}' style="font-color:red;font-weight:200%;">showTOGO</a>
                 </div>
             </div>
 
             <div class="collapse navbar-collapse" id="topNavBar">
 
                 <div class="nav navbar-nav navbar" style="margin-right:5%">
-                    <a class="navbar-brand" href='#'>Your Bookings</a>
+                    <a class="navbar-brand" href='{% url "Booking:user-booking" %}'>Your Bookings</a>
                 </div>
 
                 <div class="nav navbar-nav navbar">

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Theater</th>
+        <th>Movie</th>
+        <th>Show</th>
+        <th>Screen</th>
+        <th>Seat</th>
+        <th>Date</th>
+        <th>Booked On</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for booking in queryset %}
+        <tr>
+            <td>{{booking.theater_id.theater_name}}</td>
+            <td>{{booking.movie_id.movie_id.movie_name}}</td>
+            <td>{{booking.show_id.show}}</td>
+            <td>{{booking.screen_id.screen_id}}</td>
+            <td>{{booking.seat}}</td>
+            <td>{{booking.date_id.date_id}}</td>
+            <td>{{booking.date_today}}</td>
+        </tr>
+    </tbody>
+  </table>
+{% endfor %}
+
+{% endblock %}
+
+
