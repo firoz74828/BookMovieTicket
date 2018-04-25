@@ -16,7 +16,7 @@
     </ol>
 
     <div class="carousel-inner">
-      {% for movie in context.movie_list %}
+      {% for movie in context.movie_list_all %}
         {% if forloop.first %}
             <div class="active item">
         {% else %}
@@ -46,23 +46,23 @@
 
 
 <div class="container container-corousel" style="margin-top:1%;">
-    <table><tr>
+    <div class="container"><div class="row">
     {% for movie in context.movie_list %}
-        <td>
+        <div class="col-sm-3">
             <a href="{% url 'Booking:movie-list-detail' pk=movie.id %}">
             <input value="{{movie.pk}}" class="image" style="width:98.5%;height:80%" type="image"
                    src="{{movie.movie_image.url}}" alt="submit">
             </a>
-        </td>
+        </div>
         {% if forloop.last %}
-            </tr>
+            </div>
         {% else %}
             {% if forloop.counter|divisibleby:"3" %}
                 </tr><tr>
             {% endif %}
         {% endif %}
     {% endfor %}
-    </table>
+    </div>
 
 <br><br><br><br>
 </div>

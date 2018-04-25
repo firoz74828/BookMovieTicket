@@ -44,6 +44,7 @@ def Movie_List(request):
         context["movie_list"] = Movie.objects.all()
     else:
         context["movie_list"] = Movie.objects.filter(movie_name__icontains = movie_name)
+    context["movie_list_all"] = Movie.objects.all()
     return render(request, "Booking/index.html", {"context": context})
 
 # ----------------------------------------------------------------------------------------------------------------------
