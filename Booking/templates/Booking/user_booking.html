@@ -17,8 +17,8 @@
         <tbody>
             {% for booking in object_list %}
                 <tr>
-                    <td>{{booking.theater_id}}</td>
-                    <td>{{booking.movie_id}}</td>
+                    <td>{{booking.theater_id.theater_name}}</td>
+                    <td>{{booking.movie_id.movie_name}}</td>
                     <td>{{booking.show_id}}</td>
                     <td>{{booking.screen_id}}</td>
                     <td>{{booking.seat}}</td>
