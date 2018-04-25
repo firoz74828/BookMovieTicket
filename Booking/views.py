@@ -157,35 +157,38 @@ def Seat_Booking(request):
 
 
 def DisplayChart(request):
-    list_chart = []
-    date_count = Date.objects.all()
-    movie_count = Movie.objects.all()
-    list_movie = ["Date"]
+    if request.is_ajax():
+        list_chart = []
+        date_count = Date.objects.all()
+        movie_count = Movie.objects.all()
+        list_movie = ["Date"]
 
-    for movie in movie_count:
-        list_movie.append(movie.movie_name)
-    list_chart.append(list_movie)
+        for movie in movie_count:
+            list_movie.append(movie.movie_name)
+        list_chart.append(list_movie)
 
-    for date in range(len(date_count)):
-        counter = date+1
-        booking_date_list = Booking.objects.all()
-        date = booking_date_list.filter(date_id=date+1)
-        movie_counter = 0
-        list_date = []
-        date_list = Date.objects.filter(pk=counter)
+        for date in range(len(date_count)):
+            counter = date+1
+            booking_date_list = Booking.objects.all()
+            date = booking_date_list.filter(date_id=date+1)
+            movie_counter = 0
+            list_date = []
+            date_list = Date.objects.filter(pk=counter)
 
-        for x in date_list:
-            date_convert_string = x.date
-            date_string = date_convert_string.strftime('%d/%m/%Y')
-            list_date.append(date_string)
+            for x in date_list:
+                date_convert_string = x.date
+                date_string = date_convert_string.strftime('%d/%m/%Y')
+                list_date.append(date_string)
 
-        for i in movie_count:
-            movie_counter+=1
-            movie_id = date.filter(movie_id=movie_counter).count()
-            list_date.append(movie_id)
+            for i in movie_count:
+                movie_counter+=1
+                movie_id = date.filter(movie_id=movie_counter).count()
+                list_date.append(movie_id)
 
-        list_chart.append(list_date)
-    return HttpResponse(json.dumps(list_chart), content_type="application/json")
+            list_chart.append(list_date)
+        return HttpResponse(json.dumps(list_chart), content_type="application/json")
+    else:
+        return render(request, "Booking/booking_status.html")
 
 
 def Seat_Booked(request):

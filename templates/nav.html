@@ -18,22 +18,27 @@
                     <span class="icon-bar"></span>
 
                 </button>
-                <a class="navbar-brand" href='#'><span class="#" aria-hidden="true">PyPanel</span></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                <a class="navbar-brand" href='#'><span class="#" aria-hidden="true">PyPanel</span></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                <a class="navbar-brand" href='#'><span class="#" aria-hidden="true">PyPanel</span></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-            </div>
                 <div class="nav navbar-nav navbar-left">
-                    <img src="{% static 'media/showtogo_logo.png' %}" style="width:110%;margin-left:20px;font"/>
+                    <a class="navbar-brand" href='#'>
+                        <img src="{% static 'media/showtogo_logo.png' %}" style="width:80%;"/>
+                    </a>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="topNavBar">
+
+                <div class="nav navbar-nav" style="margin-left:5%">
+                    <a class="navbar-brand" href='#'>Your Bookings</a>
                 </div>
 
-                <div class="nav navbar-nav" style="margin-left:10%">
+                <div class="nav navbar-nav" style="margin-left:5%">
                     <a class="navbar-brand" href='{% url "Booking:movie-list" %}'>Movies</a>
                 </div>
 
                  <form action="/movie-list/" method="post">
                     {% csrf_token %}
-                    <div class="nav navbar-nav navbar-center col-sm-6">
-                        <input id="movies_filter" name="movies_filter" type="text" style="width:80%;">
+                    <div class="nav navbar-nav navbar-center">
+                        <input id="movies_filter" name="movies_filter" type="text" style="">
                         <button onclick="Movies_Filter();">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
@@ -41,9 +46,15 @@
                 </form>
 
 
-                <div class="nav navbar-nav navbar-right col-sm-2">
+
+                <div class="nav navbar-nav" style="margin-left:5%">
+                    <a class="navbar-brand" href='{% url "Booking:google-chart" %}'>Booking Status</a>
+                </div>
+
+                <div class="nav navbar-nav navbar-right">
                     <a class="navbar-brand" href='{% url "logout" %}'>Logout&ensp;({{user}})</a>
                 </div>
+            </div>
         {% endif %}
 
         </div>
