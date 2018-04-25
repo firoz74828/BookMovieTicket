@@ -137,10 +137,10 @@ def Seat_Booking(request):
     movie = request.POST.get("movie_screen")
     show = request.POST.get("show_screen")
     date = request.POST.get("date_screen")
-    print theater
-    print movie
-    print show
-    print date
+    # print theater
+    # print movie
+    # print show
+    # print date
     booking = Booking.objects.filter(theater_id_id = theater,
                                      movie_id_id = movie,
                                      show_id_id = show,
