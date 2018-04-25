@@ -143,7 +143,7 @@ td.detail_movies {
     margin-bottom:2%;
 }
 
-.table-striped{
+table.table-striped{
     background: url(http://www.fillster.com/images/backgrounds/126d.gif);
     background-repeat: repeat;
     background-attachment: scroll;

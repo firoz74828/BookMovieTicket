@@ -5,19 +5,19 @@
                    src="{{movie_id.movie_image.url}}" alt="submit">
 </div>
 
- <div class="container" ><div class="row">
+ <table class="table-striped" ><tr>
     {% for date in Date %}
         <form action="{% url 'Booking:movie-list-detail' pk=movie_id.id %}" method="get">
             {% csrf_token %}
-                <div class="colsm-1">
+                <td style="padding:5px;">
                     <input type="hidden" id="date_screen" name="date_screen" value="{{date.date_screen_id.id}}" >
                     <button type="submit" class="btn date-button">{{date.date_screen_id.date|date:"d"}}</button>
-                </div>
+                </td>
         </form>
 
     {% endfor %}
- </div>
- </div>
+ </tr>
+ </table>
 <br>
 
 <div class="container">
