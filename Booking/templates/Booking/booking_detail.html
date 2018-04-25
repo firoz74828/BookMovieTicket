@@ -34,7 +34,6 @@
                     </td>
                     <td class="detail_movies">
                         {% for show in Screen_Select %}
-                            {% if forloop.counter >= counter %}
                                 {% if i.theater_screen_id == show.theater_screen_id %}
                                     <input type="hidden" id="show_screen_id" name="show_screen" value="{{i.show_screen_id_id}}">
 
@@ -42,7 +41,6 @@
                                         {{show.show_screen_id.show}}
                                     </button>
                                 {% endif %}
-                            {% endif %}
                         {% endfor %}
                     </td>
                     <td class="detail_movies">
