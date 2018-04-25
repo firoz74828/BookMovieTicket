@@ -29,15 +29,19 @@
                 <input type="hidden" id="movie_screen_id" name="movie_screen" value="{{i.movie_screen_id_id}}">
                 <tr>
                     <td class="detail_movies">
-                        <input type="hidden" id="theater_screen_id" name="theater_screen" value="{{i.theater_screen_id_id}}">
-                        {{i.theater_screen_id.theater_name}}
+                        {% for show in Screen_Select %}
+                            {% if i.theater_screen_id == show.theater_screen_id %}
+                                <input type="hidden" id="theater_screen_id" name="theater_screen" value="{{i.theater_screen_id_id}}">
+                                {{i.theater_screen_id.theater_name}}
+                             {% endif %}
+                        {% endfor %}
                     </td>
                     <td class="detail_movies">
                         {% for show in Screen_Select %}
                                 {% if i.theater_screen_id == show.theater_screen_id %}
                                     <input type="hidden" id="show_screen_id" name="show_screen" value="{{i.show_screen_id_id}}">
 
-                                    <button id="{{i.show_screen_id}}" class="btn btn-light booking_show">
+                                    <button id="{{show.show_screen_id}}" class="btn btn-light booking_show">
                                         {{show.show_screen_id.show}}
                                     </button>
                                 {% endif %}
