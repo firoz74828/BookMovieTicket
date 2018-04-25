@@ -1,11 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    {% for img in movie_img %}
-
-     <input value="{{movie_id.pk}}" class="image" style="width:98.5%;height:80%" type="image"
-                   src="{{img.movie_image.url}}" alt="submit">
-    {% endfor %}
+    <input value="{{movie_id.pk}" class="image" style="width:98.5%;height:80%" type="image"
+                   src="{{movie_id.movie_image.url}}" alt="submit">
 </div>
  <table class="table-hover"><tr>
     {% for date in Date %}
