@@ -41,7 +41,8 @@ class Screen_Select(models.Model):
     show_screen_id = models.ForeignKey(Show, on_delete=models.CASCADE)
     screen_id = models.ForeignKey(Screen, on_delete=models.CASCADE)
     date_screen_id = models.ForeignKey(Date, on_delete=models.CASCADE)
-
+    def __unicode__(self):
+        return self.theater_screen_id,  self.movie_screen_id, self.show_screen_id, self.screen_id, self.date_screen_id
     class Meta:
         unique_together = ("theater_screen_id", "show_screen_id", "screen_id" ,"date_screen_id")
 
