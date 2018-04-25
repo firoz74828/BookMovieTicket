@@ -4,6 +4,7 @@
     <input value="{{movie_id.pk}" class="image" style="width:98.5%;height:80%" type="image"
                    src="{{movie_id.movie_image.url}}" alt="submit">
 </div>
+<div class="container">
  <table class="table-hover"><tr>
     {% for date in Date %}
         <form action="{% url 'Booking:movie-list-detail' pk=movie_id.id %}" method="get">
@@ -17,7 +18,9 @@
     {% endfor %}
  </tr>
  </table>
+</div>
 
+<div class="container">
     <table class="table table-striped">
         {% for i in Screen_Select %}
             <form action="/seat-booking/" method="post">
@@ -45,7 +48,7 @@
         {% endfor %}
     </table>
 
-
+</div>
 {% endblock %}
 
 
