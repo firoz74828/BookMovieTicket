@@ -22,7 +22,8 @@
 
 <div class="container">
     <table class="table table-striped">
-        {% for i in Screen_Select %}
+        {% for i in Theater %}
+        {% with forloop.counter as counter %}
             <form action="/seat-booking/" method="post">
                 {% csrf_token %}
                 <input type="hidden" id="movie_screen_id" name="movie_screen" value="{{i.movie_screen_id_id}}">
@@ -33,12 +34,14 @@
                     </td>
                     <td class="detail_movies">
                         {% for show in Screen_Select %}
-                            {% if i.theater_screen_id == show.theater_screen_id %}
-                                <input type="hidden" id="show_screen_id" name="show_screen" value="{{i.show_screen_id_id}}">
+                            {% if forloop.counter >= counter %}
+                                {% if i.theater_screen_id == show.theater_screen_id %}
+                                    <input type="hidden" id="show_screen_id" name="show_screen" value="{{i.show_screen_id_id}}">
 
-                                <button id="{{i.show_screen_id}}" class="btn btn-light booking_show">
-                                    {{i.show_screen_id.show}}
-                                </button>
+                                    <button id="{{i.show_screen_id}}" class="btn btn-light booking_show">
+                                        {{show.show_screen_id.show}}
+                                    </button>
+                                {% endif %}
                             {% endif %}
                         {% endfor %}
                     </td>
@@ -47,6 +50,7 @@
                     </td>
                 </tr>
             </form>
+        {% endwith %}
         {% endfor %}
     </table>
 
