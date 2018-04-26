@@ -209,7 +209,13 @@ def Seat_Booked(request):
                                      date_id =date_id)
     for i in booking:
         list_seat.append(i.seat);
-    return HttpResponse(json.dumps(list_seat), content_type="application/json")
+    context = {}
+    context['list_seat'] = list_seat
+    context['theater_id'] - theater_id
+    context['movie_id'] - movie_id
+    context['show_id'] - show_id
+    context['date_id'] - date_id
+    return HttpResponse(json.dumps(context), content_type="application/json")
 
 class UserBookings(LoginRequiredMixin, ListView):
     template_name = 'Booking/user_booking.html'
