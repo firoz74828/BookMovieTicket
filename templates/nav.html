@@ -8,31 +8,39 @@
 <body>
 {% load static %}
     <nav class="navbar navbar-inverse">
+
+        <div class="container-fluid">
         {% if request.user.is_authenticated %}
             <div class="navbar-header" style="margin-right:5%;">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+
                 </button>
-                <div class="navbar-left" style="margin-right:5%">
+                <!--<div class="nav navbar-nav navbar" style="margin-bottom:6%;">-->
+                    <!--<a class="navbar-brand" href='#'>-->
+                        <!--<img src="{% static 'media/showtogo_logo.png' %}" style="width:80%;"/>-->
+                    <!--</a>-->
+                <!--</div>-->
+                <div class="nav navbar-left" style="margin-right:5%">
                     <a class="navbar-brand" href='{% url "Booking:movie-list" %}' style="font-color:red;font-weight:200%;">showTOGO</a>
                 </div>
             </div>
 
             <div class="collapse navbar-collapse" id="topNavBar">
 
-                <div class="navbar-nav navbar" style="margin-right:5%">
+                <div class="nav navbar-nav navbar" style="margin-right:5%">
                     <a class="navbar-brand" href='{% url "Booking:user-booking" %}'>Your Bookings</a>
                 </div>
 
-                <div class="navbar-nav navbar">
+                <div class="nav navbar-nav navbar">
                     <a class="navbar-brand" href='{% url "Booking:movie-list" %}'>Movies</a>
                 </div>
 
                  <form action="/movie-list/" method="post">
                     {% csrf_token %}
-                    <div class="navbar-nav navbar-center">
+                    <div class="nav navbar-nav navbar-center">
                         <input id="movies_filter" name="movies_filter" type="text">
                         <button onclick="Movies_Filter();">
                             <span class="glyphicon glyphicon-search"></span>
@@ -42,14 +50,16 @@
 
 
 
-               <div class="navbar-nav navbar-right">
+               <div class="nav navbar-nav navbar-right">
                     <a class="navbar-brand" href='{% url "logout" %}'>Logout&ensp;({{user}})</a>
                 </div>
-                <div class="navbar-nav navbar-right" style="margin-right:5%">
+                <div class="nav navbar-nav navbar-right" style="margin-right:5%">
                     <a class="navbar-brand" href='{% url "Booking:google-chart" %}'>Booking Status</a>
                 </div>
             </div>
         {% endif %}
+
+        </div>
     </nav>
 
 </body>
