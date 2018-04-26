@@ -124,8 +124,8 @@ window.addEventListener('load',
                             console.log(data.date_id);
                             var seat_all = data
                             for(var seat in data.list_seat){
-                            console.log(seat);
-                                x = seat
+                            console.log(data.list[seat]);
+                                x = data.list[seat]
                                 document.getElementById(x).style.background = "#b3ecff";
                                 document.getElementById(x).disabled = true;
                             }
