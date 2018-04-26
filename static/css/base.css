@@ -1,11 +1,6 @@
 .container {
     width: 100%;
     position:relative;
-    background: url(http://www.fillster.com/images/backgrounds/126d.gif);
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-attachment: fixed;
-    background-repeat: repeat;
 }
 
 .list{
@@ -144,11 +139,6 @@ td.detail_movies {
 }
 
 table.date_button td{
-    background: url(http://www.fillster.com/images/backgrounds/126d.gif);
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-attachment: fixed;
-    background-repeat: repeat;
 }
 
 
