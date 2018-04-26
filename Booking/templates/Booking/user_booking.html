@@ -1,78 +1,91 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="container">
+    {% extends "base.html" %}
+    {% block content %}
+
     <div class="row">
         <div class="col-sm-3">
-            <label class="filter_test">Theaters</label>
-			<select id="theater_id" name="theater_id">
-					<option disabled selected value> -- select an option -- </option>
-				{% for theater in theater_list%}
-                    <option value="{{theater_id}}">{{theater.theater_id__theater_name}}</option>
-				{% endfor %}
-			</select><br><br>
-
-             <label>Movies</label>
-            <select id="movie_id" name="movie_list">
-					<option disabled selected value> -- select an option -- </option>
-				{% for movie in movie_list%}
-                    <option value="{{movie_id}}">{{movie.movie_id__movie_name}}</option>
-				{% endfor %}
-			</select><br><br>
-
-             <label>Shows</label>
-            <select id="show_id" name="show_list">
-					<option disabled selected value> -- select an option -- </option>
-				{% for show in show_list%}
-                    <option value="{{show_id}}">{{show.show_id__show}}</option>
-				{% endfor %}
-            </select><br><br>
-
-            <label>Date</label>
-            <select id="date_id" name="date_id" class="dropdown">
-					<option disabled selected value> -- select an option -- </option>
-				{% for date in date_list%}
-                    <option value="{{theater}}">{{date.date_id__date}}</option>
-				{% endfor %}
-			</select><br><br>
-        </div>
-
-
-
-
-
-
-        <div class="colsm-7">
-            <table class="table table-striped date_button">
-                <thead>
-                  <tr>
-                    <th>Theater</th>
-                    <th>Movie</th>
-                    <th>Show</th>
-                    <th>Screen</th>
-                    <th>Seat</th>
-                    <th>Date</th>
-                    <th>Booked On</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    {% for booking in object_list %}
-                        <tr>
-                            <td>{{booking.theater_id.theater_name}}</td>
-                            <td>{{booking.movie_id.movie_name}}</td>
-                            <td>{{booking.show_id.show}}</td>
-                            <td>{{booking.screen_id.screen}}</td>
-                            <td>{{booking.seat}}</td>
-                            <td>{{booking.date_id.date}}</td>
-                            <td>{{booking.date_today}}</td>
-                        </tr>
+            <select id="theater_id" name="theater_id">
+                        <option disabled selected value> -- select an option -- </option>
+                    {% for theater in theater_list%}
+                        <option value="{{theater_id}}">{{theater.theater_id__theater_name}}</option>
                     {% endfor %}
-                </tbody>
-            </table>
+                </select><br><br>
+
+                <select id="movie_id" name="movie_list">
+                        <option disabled selected value> -- select an option -- </option>
+                    {% for movie in movie_list%}
+                        <option value="{{movie_id}}">{{movie.movie_id__movie_name}}</option>
+                    {% endfor %}
+                </select><br><br>
+
+                <select id="show_id" name="show_list">
+                        <option disabled selected value> -- select an option -- </option>
+                    {% for show in show_list%}
+                        <option value="{{show_id}}">{{show.show_id__show}}</option>
+                    {% endfor %}
+                </select><br><br>
+
+                <select id="date_id" name="date_id" class="dropdown">
+                        <option disabled selected value> -- select an option -- </option>
+                    {% for date in date_list%}
+                        <option value="{{theater}}">{{date.date_id__date}}</option>
+                    {% endfor %}
+                </select><br><br>
+            </div>
+
+
+
+
+
+
+            <div class="colsm-9">
+                <table class="table table-striped date_button">
+                    <thead>
+                      <tr>
+                        <th>Theater</th>
+                        <th>Movie</th>
+                        <th>Show</th>
+                        <th>Screen</th>
+                        <th>Seat</th>
+                        <th>Date</th>
+                        <th>Booked On</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for booking in object_list %}
+                            <tr>
+                                <td>{{booking.theater_id.theater_name}}</td>
+                                <td>{{booking.movie_id.movie_name}}</td>
+                                <td>{{booking.show_id.show}}</td>
+                                <td>{{booking.screen_id.screen}}</td>
+                                <td>{{booking.seat}}</td>
+                                <td>{{booking.date_id.date}}</td>
+                                <td>{{booking.date_today}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 
+    <footer class="container-fluid">
+	<div class="pagination">
+		<span class="step-links"><b>
+		{% if page_obj.has_previous %}
+			<a href="?page={{ page_obj.previous_page_number }}">previous</a>
+		{% endif %}
 
-{% endblock %}
+		<span class="current">
+			Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+		</span>
+
+		{% if page_obj.has_next %}
+			<a href="?page={{ page_obj.next_page_number }}">next</a>
+					        {% endif %}
+		</b></span>
+	</div>
+</footer>
+
+    {% endblock %}
 
 
