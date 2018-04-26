@@ -110,6 +110,10 @@ window.addEventListener('load',
      var theater_id = document.getElementById("theater_id").value;
      var movie_id = document.getElementById("movie_id").value;
      var show_id = document.getElementById("show_id").value;
+     console.log(date_id);
+     console.log(theater_id);
+     console.log(movie_id);
+     console.log(show_id);
     $.ajax({
                         url: "/seat-booked/",
                         type: 'POST',
