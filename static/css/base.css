@@ -1,5 +1,4 @@
 .container {
-    width: 100%;
     position:relative;
 }
 
@@ -138,8 +137,10 @@ td.detail_movies {
     margin-bottom:2%;
 }
 
-.book_button{\
-    background:
+.dropdown{
+    float:right;
 }
 
-
+.filter_test{
+    float:left;
+}

@@ -227,5 +227,4 @@ class UserBookings(LoginRequiredMixin, ListView):
         context['movie_list'] = queryset.values('movie_id', 'movie_id__movie_name').distinct()
         context['show_list'] = queryset.values('show_id', 'show_id__show').distinct()
         context['date_list'] = queryset.values('date_id', 'date_id__date').distinct()
-        context['date_today_list'] = queryset.values('date_today').distinct()
         return context
