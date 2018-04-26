@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="container">
     <div class="row">
         <div class="col-sm-3">
             <label class="filter_test">Theaters</label>
@@ -26,8 +26,8 @@
                     <option value="{{show_id}}">{{show.show_id__show}}</option>
 				{% endfor %}
             </select><br><br>
+
             <label>Date</label>
-            <div class="dropdown"></div>
             <select id="date_id" name="date_id" class="dropdown">
 					<option disabled selected value> -- select an option -- </option>
 				{% for date in date_list%}
@@ -38,7 +38,7 @@
 
 
 
-        </div>
+
 
 
         <div class="colsm-7">
@@ -70,7 +70,7 @@
             </table>
         </div>
     </div>
-
+</div>
 
 
 {% endblock %}
