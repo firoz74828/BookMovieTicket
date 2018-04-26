@@ -130,13 +130,20 @@ window.addEventListener('load',
                                 document.getElementById(x).disabled = true;
                             }
                             var theater = data.theater_id
-                            document.getElementById(theater_id).value = theater
-                            var movie = data.movie_id
-                            document.getElementById(movie_id).value = movie
+                            var t = document.getElementById(theater_id);
+                            t.value = data.theater_id
+
+                            var movie = data.movie_i;d
+                            var m = document.getElementById(movie_id);
+                            m.value = movie
+
                             var show = data.show_id
-                            document.getElementById(show_id).value = show
+                            var s = document.getElementById(show_id);
+                            s.value = show
+                            
                             var date = data.date_id
-                            document.getElementById(date_id).value = date
+                            var d = document.getElementById(date_id);
+                            d.value = date
                         },
                         error: function(data){
                             console.log("fail");
