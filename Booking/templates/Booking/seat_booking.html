@@ -129,20 +129,19 @@ window.addEventListener('load',
                                 document.getElementById(x).style.background = "#b3ecff";
                                 document.getElementById(x).disabled = true;
                             }
-                            var theater = data.theater_id
-                            var t = document.getElementById(theater_id);
+                            var t = document.getElementById("theater_id");
                             t.value = data.theater_id
 
-                            var movie = data.movie_i;d
-                            var m = document.getElementById(movie_id);
-                            m.value = movie
+
+                            var m = document.getElementById("movie_id");
+                            m.value = data.movie_id;
 
                             var show = data.show_id
-                            var s = document.getElementById(show_id);
+                            var s = document.getElementById("show_id");
                             s.value = show
-                            
+
                             var date = data.date_id
-                            var d = document.getElementById(date_id);
+                            var d = document.getElementById("date_id");
                             d.value = date
                         },
                         error: function(data){
