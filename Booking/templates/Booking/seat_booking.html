@@ -116,7 +116,7 @@ window.addEventListener('load',
                         data: {'theater_id':theater_id, 'movie_id':movie_id, 'show_id':show_id, 'date_id':date_id,'csrfmiddlewaretoken': '{{csrf_token}}'},
                         dataType: "json",
                         success: function (data){
-                            <!--console.log(data);-->
+                            console.log(data);
                             var seat_all = data
                             for(var seat in data){
                                 x = data[seat]
