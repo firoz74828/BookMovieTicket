@@ -8,7 +8,28 @@
 			<select id="theater_id" name="theater_id">
 					<option disabled selected value> -- select an option -- </option>
 				{% for theater in theater_list%}
-                    <option value="{{theater}}">{{theater.theater_id.theater_name}}</option>
+                    <option value="{{theater_id}}">{{theater.theater_id__theater_name}}</option>
+				{% endfor %}
+			</select><br><br>
+
+            <select id="movie_id" name="movie_list">
+					<option disabled selected value> -- select an option -- </option>
+				{% for movie in movie_list%}
+                    <option value="{{movie_id}}">{{movie.movie_id__movie_name}}</option>
+				{% endfor %}
+			</select><br><br>
+
+            <select id="show_id" name="show_list">
+					<option disabled selected value> -- select an option -- </option>
+				{% for show in show_list%}
+                    <option value="{{show_id}}">{{show.show_id__show}}</option>
+				{% endfor %}
+			</select><br><br>
+
+            <select id="date_id" name="date_id">
+					<option disabled selected value> -- select an option -- </option>
+				{% for date in date_list%}
+                    <option value="{{theater}}">{{date.date_id__date}}</option>
 				{% endfor %}
 			</select><br><br>
         </div>
