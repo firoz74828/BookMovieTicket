@@ -41,6 +41,8 @@
 .navbar{
     margin:0%;
     border-radius: 0;
+    position: fixed;
+    top: 0;
     font-size: 130% !important;
     font-family: 'Open Sans', sans-serif !important;
 
@@ -141,4 +143,7 @@ td.detail_movies {
 table.date_button td{
 }
 
-
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
