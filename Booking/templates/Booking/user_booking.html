@@ -12,6 +12,7 @@
 				{% endfor %}
 			</select><br><br>
 
+             <label>Movies</label>
             <select id="movie_id" name="movie_list">
 					<option disabled selected value> -- select an option -- </option>
 				{% for movie in movie_list%}
@@ -19,20 +20,32 @@
 				{% endfor %}
 			</select><br><br>
 
+             <label>Shows</label>
             <select id="show_id" name="show_list">
 					<option disabled selected value> -- select an option -- </option>
 				{% for show in show_list%}
                     <option value="{{show_id}}">{{show.show_id__show}}</option>
 				{% endfor %}
-			</select><br><br>
-
+            </select><br><br>
+            <label>Date</label>
             <select id="date_id" name="date_id">
 					<option disabled selected value> -- select an option -- </option>
 				{% for date in date_list%}
                     <option value="{{theater}}">{{date.date_id__date}}</option>
 				{% endfor %}
 			</select><br><br>
+
+             <label>Date Booked</label>
+            <select id="date_today" name="date_today">
+					<option disabled selected value> -- select an option -- </option>
+				{% for date_today in date_today_list%}
+                    <option value="{{date_today}}">{{date_today}}</option>
+				{% endfor %}
+			</select><br><br>
+
         </div>
+
+
         <div class="colsm-8">
             <table class="table table-striped date_button">
                 <thead>
