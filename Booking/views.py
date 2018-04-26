@@ -213,6 +213,8 @@ def Seat_Booked(request):
 
 class UserBookings(LoginRequiredMixin, ListView):
     template_name = 'Booking/user_booking.html'
+    paginate_by = 10
     def get_queryset(self):
+
         queryset = Booking.objects.filter(user = self.request.user)
         return queryset
