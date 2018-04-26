@@ -218,3 +218,13 @@ class UserBookings(LoginRequiredMixin, ListView):
 
         queryset = Booking.objects.filter(user = self.request.user)
         return queryset
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(UserBookings, self).get_context_data(*args, **kwargs)
+        queryset = Booking.objects.filter(user=self.request.user)
+        context["theater_list"] = queryset.values('theater_id').distinct()
+        print context['theater_list']
+        context['movie_list'] = queryset.values('movie_id')
+        context['show_list'] = queryset.values('show_id')
+        context['date_list'] = queryset.values('date_id')
+        return context

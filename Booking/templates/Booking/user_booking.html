@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container" style="width:80%;">
+<div class="container" style="width:90%;">
     <div class="row">
-        <div class="col-sm-3">hi</div>
-        <div class="col-sm-8">
+        <div class="col-sm-3">
+            <label>Theaters</label>
+			<select id="theater_id" name="theater_id">
+					<option disabled selected value> -- select an option -- </option>
+				{% for theater in theater_list%}
+                    <option value="{{theater}}">{{theater.theater_id.theater_name}}</option>
+				{% endfor %}
+			</select><br><br>
+        </div>
+        <div class="colsm-8">
             <table class="table table-striped date_button">
                 <thead>
                   <tr>
