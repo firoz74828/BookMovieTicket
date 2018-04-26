@@ -123,7 +123,7 @@ window.addEventListener('load',
                             console.log(data.show_id);
                             console.log(data.date_id);
                             var seat_all = data
-                            for(var seat in data[list_seat]){
+                            for(var seat in data.list_seat.){
                                 x = seat
                                 document.getElementById(x).style.background = "#b3ecff";
                                 document.getElementById(x).disabled = true;
