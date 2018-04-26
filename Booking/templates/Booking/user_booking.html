@@ -1,44 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
  <div class="row">
-    <div class="col-sm-3">
-        <p class="aligncenter">Filters</p>
-        <form action="{% url 'Booking:user-booking' %}" method="POST">
-            {% csrf_token %}
+    <div class="col-sm-1">
+        <p class="aligncenter"><h4><b>Filters</b></h4></p><br><br><br><br>
+        <form action="{% url 'Booking:user-booking' %}" method="get">
              <select id="theater_id" name="theater_id">
-                        <option disabled selected value> -- Select Theater -- </option>
+                    <option disabled selected value> -- Select Theater -- </option>
                     {% for theater in theater_list%}
-                        <option value="{{theater_id}}">{{theater.theater_id__theater_name}}</option>
+                        <option value="{{theater.theater_id}}">{{theater.theater_id__theater_name}}</option>
                     {% endfor %}
                 </select><br><br>
 
-                <select id="movie_id" name="movie_id">
+                <select id="movie" name="movie_id">
                         <option disabled selected value> -- Select Movie -- </option>
                     {% for movie in movie_list%}
-                        <option value="{{movie_id}}">{{movie.movie_id__movie_name}}</option>
+                        <option value="{{movie.movie_id}}">{{movie.movie_id__movie_name}}</option>
                     {% endfor %}
                 </select><br><br>
 
-                <select id="show_id" name="show_id">
+                <select id="show" name="show_id">
                         <option disabled selected value> -- Select Show -- </option>
                     {% for show in show_list%}
-                        <option value="{{show_id}}">{{show.show_id__show}}</option>
+                        <option value="{{show.show_id}}">{{show.show_id__show}}</option>
                     {% endfor %}
                 </select><br><br>
 
-                <select id="date_id" name="date_id" class="date_id">
+                <select id="date" name="date_id" class="date_id">
                         <option disabled selected value> -- Select Date -- </option>
                     {% for date in date_list%}
-                        <option value="{{theater}}">{{date.date_id__date}}</option>
+                        <option value="{{date.date_id}}">{{date.date_id__date}}</option>
                     {% endfor %}
                 </select><br><br>
-            <button class="btn" type="submit" onclick="myFunction()">Search</button>
+            <button class="btn" type="submit" onclick="myFunction()">
+                Search
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
         </form>
     </div>
 
 
   
-  <div class="col-sm-9">
+  <div class="col-sm-11">
             
             {% if object_list %}
                  <table class="table table-striped date_button">

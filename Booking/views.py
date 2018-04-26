@@ -215,22 +215,31 @@ class UserBookings(LoginRequiredMixin, ListView):
     template_name = 'Booking/user_booking.html'
     paginate_by = 10
     def get_queryset(self):
-        theater = self.request.POST.get('theater_id')
-        movie = self.request.POST.get('movie_id')
-        show = self.request.POST.get('show_id')
-        date = self.request.POST.get('date_id')
-        print theater
-        print movie
-        print show
-        print date
+        theater = self.request.GET.get('theater_id')
+        movie = self.request.GET.get('movie_id')
+        show = self.request.GET.get('show_id')
+        date = self.request.GET.get('date_id')
         queryset = Booking.objects.filter(user = self.request.user)
-        return queryset
+
+        if theater is not None and theater != "":
+            queryset = queryset.filter(theater_id = theater)
+        if movie is not None and movie != "":
+            queryset = queryset.filter(movie_id = movie)
+        if show is not None and show != "":
+            queryset = queryset.filter(show_id = show)
+        if date is not None and date != "":
+            queryset = queryset.filter(date_id = date)
+        if queryset:
+            return queryset
+        elif theater is None and movie is None and show is None and  date is None:
+            return Booking.objects.filter(user=self.request.user)
+        else:
+            return queryset
 
     def get_context_data(self, *args, **kwargs):
         context = super(UserBookings, self).get_context_data(*args, **kwargs)
         queryset = Booking.objects.filter(user=self.request.user)
         context["theater_list"] = queryset.values('theater_id', "theater_id__theater_name").distinct()
-        # print context['theater_list']
         context['movie_list'] = queryset.values('movie_id', 'movie_id__movie_name').distinct()
         context['show_list'] = queryset.values('show_id', 'show_id__show').distinct()
         context['date_list'] = queryset.values('date_id', 'date_id__date').distinct()
