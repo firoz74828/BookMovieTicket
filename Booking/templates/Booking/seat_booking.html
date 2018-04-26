@@ -116,9 +116,10 @@ window.addEventListener('load',
                         data: {'theater_id':theater_id, 'movie_id':movie_id, 'show_id':show_id, 'date_id':date_id,'csrfmiddlewaretoken': '{{csrf_token}}'},
                         dataType: "json",
                         success: function (data){
-                            console.log(data);
+                            console.log(data[list_seat]);
+                            console.log(data.list_seat);
                             var seat_all = data
-                            for(var seat in data){
+                            for(var seat in data[list_seat]){
                                 x = data[seat]
                                 document.getElementById(x).style.background = "#b3ecff";
                                 document.getElementById(x).disabled = true;
