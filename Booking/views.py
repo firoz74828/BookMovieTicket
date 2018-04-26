@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect
-from django.views.generic import View, ListView, DetailView, CreateView, UpdateView, View
+from django.views.generic import View, ListView, DetailView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
 from django.contrib.auth import authenticate, login
@@ -215,7 +215,14 @@ class UserBookings(LoginRequiredMixin, ListView):
     template_name = 'Booking/user_booking.html'
     paginate_by = 10
     def get_queryset(self):
-
+        theater = self.request.POST.get('theater_id')
+        movie = self.request.POST.get('movie_id')
+        show = self.request.POST.get('show_id')
+        date = self.request.POST.get('date_id')
+        print theater
+        print movie
+        print show
+        print date
         queryset = Booking.objects.filter(user = self.request.user)
         return queryset
 

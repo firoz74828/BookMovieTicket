@@ -1,44 +1,47 @@
-    {% extends "base.html" %}
-    {% block content %}
-
-    <div class="row">
-        <div class="col-sm-3">
-            <select id="theater_id" name="theater_id">
-                        <option disabled selected value> -- select an option -- </option>
+{% extends "base.html" %}
+{% block content %}
+ <div class="row">
+    <div class="col-sm-3">
+        <p class="aligncenter">Filters</p>
+        <form action="{% url 'Booking:user-booking' %}" method="POST">
+            {% csrf_token %}
+             <select id="theater_id" name="theater_id">
+                        <option disabled selected value> -- Select Theater -- </option>
                     {% for theater in theater_list%}
                         <option value="{{theater_id}}">{{theater.theater_id__theater_name}}</option>
                     {% endfor %}
                 </select><br><br>
 
-                <select id="movie_id" name="movie_list">
-                        <option disabled selected value> -- select an option -- </option>
+                <select id="movie_id" name="movie_id">
+                        <option disabled selected value> -- Select Movie -- </option>
                     {% for movie in movie_list%}
                         <option value="{{movie_id}}">{{movie.movie_id__movie_name}}</option>
                     {% endfor %}
                 </select><br><br>
 
-                <select id="show_id" name="show_list">
-                        <option disabled selected value> -- select an option -- </option>
+                <select id="show_id" name="show_id">
+                        <option disabled selected value> -- Select Show -- </option>
                     {% for show in show_list%}
                         <option value="{{show_id}}">{{show.show_id__show}}</option>
                     {% endfor %}
                 </select><br><br>
 
-                <select id="date_id" name="date_id" class="dropdown">
-                        <option disabled selected value> -- select an option -- </option>
+                <select id="date_id" name="date_id" class="date_id">
+                        <option disabled selected value> -- Select Date -- </option>
                     {% for date in date_list%}
                         <option value="{{theater}}">{{date.date_id__date}}</option>
                     {% endfor %}
                 </select><br><br>
-            </div>
+            <button class="btn" type="submit" onclick="myFunction()">Search</button>
+        </form>
+    </div>
 
 
-
-
-
-
-            <div class="colsm-9">
-                <table class="table table-striped date_button">
+  
+  <div class="col-sm-9">
+            
+            {% if object_list %}
+                 <table class="table table-striped date_button">
                     <thead>
                       <tr>
                         <th>Theater</th>
@@ -64,28 +67,35 @@
                         {% endfor %}
                     </tbody>
                 </table>
-            </div>
-        </div>
+
+
+                
+            {% else %}
+
+                <div align="center">
+                       <h3>No Bookings</h3>
+                </div>
+                <br>
+
+            {% endif %}
     </div>
+</div> <br><br>
 
-    <footer class="container-fluid">
-	<div class="pagination">
-		<span class="step-links"><b>
-		{% if page_obj.has_previous %}
-			<a href="?page={{ page_obj.previous_page_number }}">previous</a>
-		{% endif %}
+<footer class="container-fluid" style="float:right;">
+    <div class="pagination">
+        <span class="step-links"><b>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
 
-		<span class="current">
-			Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-		</span>
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
 
-		{% if page_obj.has_next %}
-			<a href="?page={{ page_obj.next_page_number }}">next</a>
-					        {% endif %}
-		</b></span>
-	</div>
-</footer>
-
-    {% endblock %}
-
-
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+                            {% endif %}
+        </b></span>
+    </div>
+</footer>   
+{% endblock %}
