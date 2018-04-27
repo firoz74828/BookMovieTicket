@@ -7,6 +7,7 @@ urlpatterns = [
 
     url(r'^$', HomeView.as_view(), name="home"),
     url(r'^register/$', views.register, name = 'register'),
+    url(r'^login-page/$', LoginPage.as_view(), name = 'login-page'),
     # url(r'^seat-booked/$', views.Seat_Booked, name = 'seat-booked'),
     url(r'^google-chart/$', views.DisplayChart, name = 'google-chart'),
     url(r'^seat-booking/$', views.Seat_Booking, name = 'seat-booking'),
