@@ -61,15 +61,18 @@ button:hover {
 }
 </style>
 <body>
-<div class="container" align="center" style="width:30%;margin-left:30%;">
+<div class="container" align="center" style="width:40%;margin-left:30%;">
     <form action="/register/" style="border:1px solid #ccc">
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
         <hr>
 
+        <label><b>UserName</b></label>
+        <input  id="username" type="text" placeholder="Enter UseName" name="username" required>
+
         <label><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <input id="email" type="email" placeholder="Enter Email" name="email" required>
 
         <label><b>Password</b></label>
         <input id="password" type="password" placeholder="Enter Password" name="password" required>
