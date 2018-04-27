@@ -13,12 +13,12 @@
                     {% with row|add:forloop.counter as id %}
                     <div>{{id}}</div>
                      <div class="col-sm-1" style="width:7%;height:1%;">
-                        <button id="{{row}}{{forloop.counter}}"  class="btn" {% if forloop.counter in list_seat %}
+                        <button id="{{row}}{{forloop.counter}}"  class="btn" {% if id in list_seat %}
                                                 disabled
                                             {% else %}
                                                 onclick="myFunction(this);"
                                             {% endif %}>
-                            {{forloop.counter}}
+                            {{id}}
                         </button>
                      </div>
                     {% if forloop.counter|divisibleby:5 %}
