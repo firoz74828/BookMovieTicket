@@ -211,10 +211,11 @@ def Seat_Booked(request):
         list_seat.append(i.seat);
     context = {}
     context['list_seat'] = list_seat
-    context['theater_id'] = theater_id
-    context['movie_id'] = movie_id
-    context['show_id'] = show_id
-    context['date_id'] = date_id
+    context['theater_id'] = int(theater_id)
+    print type(context['theater_id'])
+    context['movie_id'] = int(movie_id)
+    context['show_id'] = int(show_id)
+    context['date_id'] = int(date_id)
     return HttpResponse(json.dumps(context), content_type="application/json")
 
 class UserBookings(LoginRequiredMixin, ListView):

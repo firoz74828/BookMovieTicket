@@ -10,6 +10,8 @@
                 <div class="row" style="margin-left:10%;margin-right:0%;height:5px;">
                     <div class="col-sm-1" style="width:7%;height:3%;margin-top:1%;">{{row}}</div>
                 {% for column in value %}
+                    {% with row|add:forloop.counter as id %}
+                    {{id}}
                      <div class="col-sm-1" style="width:7%;height:1%;">
                         <button id="{{row}}{{forloop.counter}}"  class="btn" {% if forloop.counter in list_seat %}
                                                 disabled
@@ -22,6 +24,7 @@
                     {% if forloop.counter|divisibleby:5 %}
                     <div class="col-sm-1 seats" style="width:7%;height:3%;margin-top:1%;"></div>
                     {% endif %}
+                    {% endwith %}
                 {% endfor %}
                 {% if forloop.counter|divisibleby:5 %}
                     </div><div class="row">
@@ -102,61 +105,60 @@
         }
 
 
-window.addEventListener('load',
-  function() {
-    var x;
-    var seat;
-     var date_id = document.getElementById("date_id").value;
-     var theater_id = document.getElementById("theater_id").value;
-     var movie_id = document.getElementById("movie_id").value;
-     var show_id = document.getElementById("show_id").value;
-     console.log(date_id);
-     console.log(theater_id);
-     console.log(movie_id);
-     console.log(show_id);
-    $.ajax({
-                        url: "/seat-booked/",
-                        type: 'POST',
-                        data: {'theater_id':theater_id, 'movie_id':movie_id, 'show_id':show_id, 'date_id':date_id,'csrfmiddlewaretoken': '{{csrf_token}}'},
-                        dataType: "json",
-                        success: function (data){
-                            <!--console.log(data[list_seat]);-->
-                            console.log(data.list_seat);
-                            console.log(data.theater_id);
-                            console.log(data.movie_id);
-                            console.log(data.show_id);
-                            console.log(data.date_id);
-                            var seat_all = data
-                            for(var seat in data.list_seat){
-                            console.log(data.list_seat[seat]);
-                                x = data.list_seat[seat]
-                                document.getElementById(x).style.background = "#b3ecff";
-                                document.getElementById(x).disabled = true;
-                            }
-                            console.log(typeof data.theater_id);
-                            var x = new Number(data.theater_id);
-                            console.log(typeof x)
-                            document.getElementById("theater_id").value = new Number(data.theater_id);
+<!--window.addEventListener('load',-->
+  <!--function() {-->
+    <!--var x;-->
+    <!--var seat;-->
+     <!--var date_id = document.getElementById("date_id").value;-->
+     <!--var theater_id = document.getElementById("theater_id").value;-->
+     <!--var movie_id = document.getElementById("movie_id").value;-->
+     <!--var show_id = document.getElementById("show_id").value;-->
+     <!--console.log(date_id);-->
+     <!--console.log(theater_id);-->
+     <!--console.log(movie_id);-->
+     <!--console.log(show_id);-->
+    <!--$.ajax({-->
+                        <!--url: "/seat-booked/",-->
+                        <!--type: 'POST',-->
+                        <!--data: {'theater_id':theater_id, 'movie_id':movie_id, 'show_id':show_id, 'date_id':date_id,'csrfmiddlewaretoken': '{{csrf_token}}'},-->
+                        <!--dataType: "json",-->
+                        <!--success: function (data){-->
+                            <!--&lt;!&ndash;console.log(data[list_seat]);&ndash;&gt;-->
+                            <!--console.log(data.list_seat);-->
+                            <!--console.log(data.theater_id);-->
+                            <!--console.log(data.movie_id);-->
+                            <!--console.log(data.show_id);-->
+                            <!--console.log(data.date_id);-->
+                            <!--var seat_all = data-->
+                            <!--for(var seat in data.list_seat){-->
+                            <!--console.log(data.list_seat[seat]);-->
+                                <!--x = data.list_seat[seat]-->
+                                <!--document.getElementById(x).style.background = "#b3ecff";-->
+                                <!--document.getElementById(x).disabled = true;-->
+                            <!--}-->
+                            <!--console.log(typeof data.theater_id);-->
+                            <!--document.getElementById("theater_id").value = data.theater_id;-->
 
-                            movie_id = data.movie_id;
-                            console.log(movie_id)
+                            <!--movie_id = data.movie_id;-->
+                            <!--console.log(movie_id)-->
 
-                            show_id = data.show_id
-                            console.log(show_id)
+                            <!--show_id = data.show_id-->
+                            <!--console.log(show_id)-->
 
-                            date_id = data.date_id
-                            console.log(date_id)
-                        },
-                        error: function(data){
-                            console.log("fail");
+                            <!--date_id = data.date_id-->
+                            <!--console.log(date_id)-->
+                        <!--},-->
+                        <!--error: function(data){-->
+                            <!--console.log("fail");-->
 
-                        },
-    });
-  }, false);
+                        <!--},-->
+    <!--});-->
+  <!--}, false);-->
 
 
 </script>
 {% endblock %}
+
 
 
 
