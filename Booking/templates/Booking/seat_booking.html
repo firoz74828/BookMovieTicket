@@ -24,6 +24,7 @@
                     {% if forloop.counter|divisibleby:5 %}
                     <div class="col-sm-1 seats" style="width:7%;height:3%;margin-top:1%;"></div>
                     {% endif %}
+                    {% endwith %}
                 {% endfor %}
                 {% if forloop.counter|divisibleby:5 %}
                     </div><div class="row">
