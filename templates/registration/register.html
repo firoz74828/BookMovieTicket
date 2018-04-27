@@ -19,8 +19,10 @@
     <label class="labels_register">Password</label>
     <input class="list_register" type="password" name="password" id="password">
     <br><br><br>
-    <button class="book_button"type="submit">Sign up</button>
-    <a class="navbar-brand" href='{% url "login" %}'>Login</a>
+    <div class="signup" style="margin-left:15%;width:20%">
+      <button class="book_button"type="submit">Sign up</button><br>
+      <a class="navbar-brand" href='{% url "login" %}'>Login</a>
+    </div>
   </form>
 </div>
 {% endblock %}
