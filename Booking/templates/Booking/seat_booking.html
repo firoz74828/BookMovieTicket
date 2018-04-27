@@ -54,7 +54,7 @@
         <div class="col-sm-2">
             <h4>Amount to be paid</h4>
             <br><br><br><br>
-            <input id="amount_id" type="text">
+            <textarea id="amount_id" type="text">Total Amount</textarea>
         </div>
     </div>
 </div>
@@ -78,7 +78,9 @@
                 button.style.background = "#ff9999";
             }
             var count = seat_list.length;
+            console.log(count);
             var total_amount = count*100
+            console.log(total_amount);
             document.getElementById('amount_id').innerHTML = total_amount;
         }
 
