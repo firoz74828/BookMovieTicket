@@ -11,7 +11,7 @@
                     <div class="col-sm-1" style="width:7%;height:3%;margin-top:1%;">{{row}}</div>
                 {% for column in value %}
                     {% with row|add:forloop.counter as id %}
-                    {{id}}
+                    <div>{{id}}</div>
                      <div class="col-sm-1" style="width:7%;height:1%;">
                         <button id="{{row}}{{forloop.counter}}"  class="btn" {% if forloop.counter in list_seat %}
                                                 disabled
