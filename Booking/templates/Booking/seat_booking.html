@@ -134,7 +134,9 @@ window.addEventListener('load',
                                 document.getElementById(x).disabled = true;
                             }
                             console.log(typeof data.theater_id);
-                            document.getElementById("theater_id").value = data.theater_id;
+                            var x = new Number(data.theater_id);
+                            console.log(typeof x)
+                            document.getElementById("theater_id").value = new Number(data.theater_id);
 
                             movie_id = data.movie_id;
                             console.log(movie_id)
