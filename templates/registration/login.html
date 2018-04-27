@@ -28,21 +28,6 @@ button:hover {
     opacity: 0.8;
 }
 
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
 
 .container {
     padding: 16px;
@@ -53,27 +38,14 @@ span.psw {
     padding-top: 16px;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}
+
 </style>
 </head>
 <body>
 <div  class="container" align="center" style="width:30%;margin-left:30%;">
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
-
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        {{form.as_p}}
 
         <button type="submit">Login</button>
         <label>
