@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cfc458b-fa86-4e82-af66-79e91d54eb2b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/nav.html" afterPath="$PROJECT_DIR$/templates/nav.html" />
+      <change beforePath="$PROJECT_DIR$/Booking/views.py" afterPath="$PROJECT_DIR$/Booking/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Booking/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="47" column="16" lean-forward="true" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+            <state relative-caret-position="426">
+              <caret line="258" column="63" lean-forward="false" selection-start-line="258" selection-start-column="63" selection-end-line="258" selection-end-column="63" />
               <folding>
                 <element signature="e#0#81#0" expanded="true" />
               </folding>
@@ -90,10 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/nav.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
+            <state relative-caret-position="545">
               <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -185,10 +185,10 @@
         <option value="$PROJECT_DIR$/templates/registration/register.html" />
         <option value="$PROJECT_DIR$/Booking/templates/Booking/seat_booking.html" />
         <option value="$PROJECT_DIR$/Booking_Ticket_Movie/settings.py" />
-        <option value="$PROJECT_DIR$/Booking/views.py" />
         <option value="$PROJECT_DIR$/Booking/urls.py" />
         <option value="$PROJECT_DIR$/Booking/templates/Booking/login_page.html" />
         <option value="$PROJECT_DIR$/templates/nav.html" />
+        <option value="$PROJECT_DIR$/Booking/views.py" />
       </list>
     </option>
   </component>
@@ -831,25 +831,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Booking/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="47" column="16" lean-forward="true" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/nav.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
+        <state relative-caret-position="545">
           <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Booking/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="258" column="63" lean-forward="false" selection-start-line="258" selection-start-column="63" selection-end-line="258" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#81#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from datetime import datetime
 from django.core import serializers
 import json
+from django.contrib.auth.decorators import login_required
 from datetime import date
 
 class HomeView(View):
@@ -43,7 +44,7 @@ class LoginPage(ListView):
         return Movie.objects.all()
 
 # ----------------------------------------------------------------------------------------------------------------------
-
+@login_required
 def Movie_List(request):
     context = {}
     movie_name = request.POST.get('movies_filter')
@@ -55,7 +56,7 @@ def Movie_List(request):
     return render(request, "Booking/index.html", {"context": context})
 
 # ----------------------------------------------------------------------------------------------------------------------
-
+@login_required
 def booking_create(request):
     seat_list = request.POST.getlist('seat_list[]')
     theater_id = request.POST.get('theater_id')
@@ -131,7 +132,7 @@ class Movie_DetailView(LoginRequiredMixin, DetailView):
         return context
 
 # ----------------------------------------------------------------------------------------------------------------------
-
+@login_required
 def Seat_Booking(request):
     list_seat = []
     context = {}
@@ -168,7 +169,7 @@ def Seat_Booking(request):
                                                          "show_booking": show,
                                                          "date_booking": date})
 
-
+@login_required
 def DisplayChart(request):
     if request.is_ajax():
         list_chart = []
@@ -203,27 +204,27 @@ def DisplayChart(request):
     else:
         return render(request, "Booking/booking_status.html")
 
-
-def Seat_Booked(request):
-    list_seat = []
-    theater_id = request.POST.get('theater_id')
-    movie_id = request.POST.get('movie_id')
-    show_id = request.POST.get('show_id')
-    date_id = request.POST.get('date_id')
-    booking = Booking.objects.filter(theater_id = theater_id,
-                                     movie_id = movie_id,
-                                     show_id = show_id,
-                                     date_id =date_id)
-    for i in booking:
-        list_seat.append(i.seat);
-    context = {}
-    context['list_seat'] = list_seat
-    context['theater_id'] = int(theater_id)
-    # print type(context['theater_id'])
-    context['movie_id'] = int(movie_id)
-    context['show_id'] = int(show_id)
-    context['date_id'] = int(date_id)
-    return HttpResponse(json.dumps(context), content_type="application/json")
+# @login_required
+# def Seat_Booked(request):
+#     list_seat = []
+#     theater_id = request.POST.get('theater_id')
+#     movie_id = request.POST.get('movie_id')
+#     show_id = request.POST.get('show_id')
+#     date_id = request.POST.get('date_id')
+#     booking = Booking.objects.filter(theater_id = theater_id,
+#                                      movie_id = movie_id,
+#                                      show_id = show_id,
+#                                      date_id =date_id)
+#     for i in booking:
+#         list_seat.append(i.seat);
+#     context = {}
+#     context['list_seat'] = list_seat
+#     context['theater_id'] = int(theater_id)
+#     # print type(context['theater_id'])
+#     context['movie_id'] = int(movie_id)
+#     context['show_id'] = int(show_id)
+#     context['date_id'] = int(date_id)
+#     return HttpResponse(json.dumps(context), content_type="application/json")
 
 class UserBookings(LoginRequiredMixin, ListView):
     template_name = 'Booking/user_booking.html'
