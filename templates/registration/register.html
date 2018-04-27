@@ -3,6 +3,7 @@
     {% if error %}
       {{ error }}
     {% endif %}
+<div class="container" style="width:50%" align="center">
   <h2>Sign up</h2>
   <br><br>
   <form action="/register/" method="post">
@@ -22,4 +23,5 @@
     <br><br>
     <a class="navbar-brand" href='{% url "login" %}'>Login</a>
   </form>
+</div>
 {% endblock %}
