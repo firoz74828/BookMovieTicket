@@ -137,15 +137,9 @@ def Seat_Booking(request):
     list_seat = []
     context = {}
     theater = request.GET.get("theater_screen")
-    print theater
-    movie = request.Get.get("movie_screen")
-    print movie
-    show = request.Get.get("show_screen")
-    date = request.Get.get("date_screen")
-    # print theater
-    # print movie
-    # print show
-    # print date
+    movie = request.GET.get("movie_screen")
+    show = request.GET.get("show_screen")
+    date = request.GET.get("date_screen")
     booking = Booking.objects.filter(theater_id_id = theater,
                                      movie_id_id = movie,
                                      show_id_id = show,

@@ -23,13 +23,9 @@
 <div class="container">
     <table class="table table-striped">
         {% for i in Theater %}
-        {% with forloop.counter as counter %}
-
-                {% csrf_token %}
                 <tr>
                     <td class="detail_movies">
-
-                                {{i.theater_screen_id.theater_name}}
+                        {{i.theater_screen_id.theater_name}}
                     </td>
                     <td class="detail_movies">
                         {% for show in Screen_Select %}
@@ -47,62 +43,9 @@
                         {% endfor %}
                     </td>
                 </tr>
-
-        {% endwith %}
         {% endfor %}
     </table>
 
 </div>
 {% endblock %}
-
-
-<!--<script type="text/javascript">-->
-
-<!--function myFunction(button){-->
-    <!--var theater_screen = document.getElementById('theater_screen_id').value;-->
-    <!--var movie_screen = document.getElementById('movie_screen_id').value;-->
-    <!--var show_screen = document.getElementById('show_screen_id').value;-->
-    <!--var date_screen = document.getElementById('date_screen_id').value;-->
-
-    <!--$.ajax({-->
-						<!--url: '/seat-booking/',-->
-						<!--type: 'POST',-->
-						<!--data: {'theater_screen':theater_screen, 'movie_screen':movie_screen, 'show_screen':show_screen, 'date_screen':date_screen, 'csrfmiddlewaretoken': '{{csrf_token}}'},-->
-						<!--dataType: "json",-->
-
-						<!--success: function(result){-->
-							<!--alert("Success")-->
-
-						<!--},-->
-
-						<!--error: function(result){-->
-							<!--console.log(result);-->
-							<!--alert(result);-->
-
-						<!--},-->
-			<!--});-->
-
-
-
-
-<!--}-->
-
-<!--</script>-->
-
-
-
-
-<!--<div class="row">-->
-<!--<h4>-->
-<!--<div class="col-sm-3">-->
-<!--<img class="image" style="width:40%;height:30%;" src="{{i.theater_screen_id.theater_image.url}}">-->
-<!--</div>-->
-<!--<div class="col-sm-3">-->
-<!--{{i.show_screen_id}}-->
-<!--</div>-->
-<!--<div class="col-sm-3">-->
-<!--{{i.date}}-->
-<!--</div>-->
-<!--</h4>-->
-<!--</div>-->
 
