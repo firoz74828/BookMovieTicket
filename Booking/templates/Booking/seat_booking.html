@@ -5,13 +5,13 @@
 <input type="hidden" onload="buttonDisable()">
 
         <div class="container " style="width:60%;" align="center">
-            {% for row, value in context.items %}
+            {% for row, row_value in context.items %}
                 {% with forloop.counter as outer_counter %}
                 <div class="row" style="margin-left:10%;margin-right:0%;height:5px;">
                     <div class="col-sm-1" style="width:7%;height:3%;margin-top:1%;">{{row}}</div>
-                    {{value}}
-                {% for column in value %}
-                    {{column}}
+                    
+                {% for column, column_value in row_value %}
+                    {{column_value}}
                     {% with forloop.counter as counter %}
                     {% with row|add:row as id %}
                      <div class="col-sm-1" style="width:7%;height:1%;">
