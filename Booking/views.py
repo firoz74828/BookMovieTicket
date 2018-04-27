@@ -39,7 +39,7 @@ def register(request):
 # ---------------------------------------------------------------------------------------------------------------------
 
 class LoginPage(ListView):
-    template_name = 'booking/login_page.html'
+    template_name = 'Booking/login_page.html'
     def get_queryset(self):
         return Movie.objects.all()
 
