@@ -136,10 +136,10 @@ class Movie_DetailView(LoginRequiredMixin, DetailView):
 def Seat_Booking(request):
     list_seat = []
     context = {}
-    theater = request.POST.get("theater_screen")
-    movie = request.POST.get("movie_screen")
-    show = request.POST.get("show_screen")
-    date = request.POST.get("date_screen")
+    theater = request.GET.get("theater_screen")
+    movie = request.Get.get("movie_screen")
+    show = request.Get.get("show_screen")
+    date = request.Get.get("date_screen")
     # print theater
     # print movie
     # print show

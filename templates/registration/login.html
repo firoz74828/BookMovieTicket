@@ -67,7 +67,8 @@ span.psw {
 </head>
 <body>
 <div  class="container" align="center" style="width:30%;margin-left:30%;">
-    <form action="/movie-list/">
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
         <label><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="uname" required>
 

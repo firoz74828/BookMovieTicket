@@ -33,7 +33,7 @@
                     </td>
                     <td class="detail_movies">
                         {% for show in Screen_Select %}
-                        <form action="/seat-booking/" method="post">
+                        <form action="/seat-booking/" method="get">
                             {% csrf_token %}
                                 {% if i.theater_screen_id == show.theater_screen_id %}
                                     <input type="hidden" id="theater_screen_id" name="theater_screen" value="{{show.theater_screen_id.id}}">
