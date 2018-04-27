@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
 
@@ -68,12 +68,12 @@ span.psw {
 </head>
 <body>
 
-{% block content %}
-<div align="center" class="center-login">
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        <div class="imgcontainer">
-        </div>
+<h2>Login Form</h2>
+
+<form action="/action_page.php">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
 
   <div class="container">
     <label><b>Username</b></label>
@@ -92,10 +92,7 @@ span.psw {
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
-        <input type="hidden" name="next" value="{{ next }}" />
-    </form>
-</div>
+</form>
 
-{% endblock %}
 </body>
 </html>
