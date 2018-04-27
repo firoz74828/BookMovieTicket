@@ -13,6 +13,7 @@
                     {% with row|add:column as id %}
                      <div class="col-sm-1" style="width:7%;height:1%;">
                         <button id="{{id}}"  class="btn" {% if id in list_seat %}
+                                style="background:#9a9ca0"
                                                 disabled
                                             {% else %}
                                                 onclick="myFunction(this);"
