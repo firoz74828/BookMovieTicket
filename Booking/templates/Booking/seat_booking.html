@@ -12,7 +12,7 @@
                 {% for column in value %}
                     {% with row|add:column as id %}
                      <div class="col-sm-1" style="width:7%;height:1%;">
-                        <button id="{{row}}{{forloop.counter}}"  class="btn" {% if id in list_seat %}
+                        <button id="{{id}}"  class="btn" {% if id in list_seat %}
                                                 disabled
                                             {% else %}
                                                 onclick="myFunction(this);"
