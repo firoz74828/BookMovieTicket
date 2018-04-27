@@ -10,7 +10,7 @@
                 <div class="row" style="margin-left:10%;margin-right:0%;height:5px;">
                     <div class="col-sm-1" style="width:7%;height:3%;margin-top:1%;">{{row}}</div>
                 {% for column in value %}
-                    {% with forloop.counter as column %}
+                    <!--{% with forloop.counter as column %}-->
                     {% with row|add:column as id %}
                      <div class="col-sm-1" style="width:7%;height:1%;">
                         <button id="{{row}}{{forloop.counter}}"  class="btn" {% if id in list_seat %}
@@ -24,7 +24,7 @@
                     {% if forloop.counter|divisibleby:5 %}
                     <div class="col-sm-1 seats" style="width:7%;height:3%;margin-top:1%;"></div>
                     {% endif %}
-                    {% endwith %}
+                    <!--{% endwith %}-->
                     {% endwith %}
                 {% endfor %}
                 {% if forloop.counter|divisibleby:5 %}
