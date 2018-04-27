@@ -212,7 +212,7 @@ def Seat_Booked(request):
     context = {}
     context['list_seat'] = list_seat
     context['theater_id'] = int(theater_id)
-    print type(context['theater_id'])
+    # print type(context['theater_id'])
     context['movie_id'] = int(movie_id)
     context['show_id'] = int(show_id)
     context['date_id'] = int(date_id)
