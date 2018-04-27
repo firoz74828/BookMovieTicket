@@ -133,9 +133,8 @@ window.addEventListener('load',
                                 document.getElementById(x).style.background = "#b3ecff";
                                 document.getElementById(x).disabled = true;
                             }
-                            var theater = data.theater_id
-                            document.getElementById("theater_id").value = theater;
-
+                            date_id = data.theater_id
+                            console.log(date_id)
 
                             document.getElementById("movie_id").value = data.movie_id;
 
