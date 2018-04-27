@@ -2,7 +2,6 @@
 <html>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box}
 input[type=text], input[type=password] {
     width: 100%;
     padding: 15px;
@@ -62,12 +61,15 @@ button:hover {
 }
 </style>
 <body>
-<div  class="container" align="center" style="width:30%;margin-left:30%;">
+<div class="container" align="center" style="width:30%;margin-left:30%;">
     <form action="/register/" style="border:1px solid #ccc">
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
         <hr>
+
+        <label><b>UserName</b></label>
+        <input id="username" type="username" placeholder="Enter Email" name="username" required>
 
         <label><b>Email</b></label>
         <input id="email" type="email" placeholder="Enter Email" name="email" required>
@@ -75,8 +77,6 @@ button:hover {
         <label><b>Password</b></label>
         <input id="password" type="password" placeholder="Enter Password" name="password" required>
 
-        
-        
         <label>
           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
         </label>
@@ -89,7 +89,7 @@ button:hover {
         </div>
       </div>
     </form>
-</labe>
+</div>>
 
 </body>
 </html>
