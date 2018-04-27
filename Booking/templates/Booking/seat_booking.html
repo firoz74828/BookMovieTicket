@@ -9,7 +9,7 @@
                 {% with forloop.counter as outer_counter %}
                 <div class="row" style="margin-left:10%;margin-right:0%;height:5px;">
                     <div class="col-sm-1" style="width:7%;height:3%;margin-top:1%;">{{row}}</div>
-                {% for column in context.row %}
+                {% for column in context[row] %}
                     {{column}}
                     {% with forloop.counter as counter %}
                     {% with row|add:row as id %}
