@@ -113,10 +113,11 @@ td.detail_movies {
 .navbar-center{
     margin:1%;
 }
-
+seat
 .seats{
     width:5%;
     height:5%;
+    margin-left:15%
 }
 
 .book_button{
