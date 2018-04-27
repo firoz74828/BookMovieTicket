@@ -50,6 +50,10 @@
              <div class="nav navbar-nav navbar-right" style="margin-right:5%">
                     <a class="navbar-brand" href='{% url "logout" %}'>Logout&ensp;({{user}})</a>
                 </div>
+                <div class="nav navbar-nav navbar-right" style="margin-right:5%">
+                    <a class="navbar-brand" href='{% url "Booking:google-chart" %}'>Booking Status</a>
+                </div>
+          </div>
             </div>
 
           {% else %}
@@ -60,12 +64,13 @@
                 <div class="nav navbar-nav navbar-right" style="margin-right:5%">
                     <a class="navbar-brand" href='{% url "Booking:register" %}'>Register</a>
                 </div>
-          {% endif %}
-
           <div class="nav navbar-nav navbar-right" style="margin-right:5%">
                     <a class="navbar-brand" href='{% url "Booking:google-chart" %}'>Booking Status</a>
                 </div>
           </div>
+          {% endif %}
+
+
 
         </div>
     </nav>
