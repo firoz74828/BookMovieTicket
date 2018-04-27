@@ -169,7 +169,6 @@ def Seat_Booking(request):
                                                          "show_booking": show,
                                                          "date_booking": date})
 
-@login_required
 def DisplayChart(request):
     if request.is_ajax():
         list_chart = []
