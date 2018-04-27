@@ -137,7 +137,9 @@ def Seat_Booking(request):
     list_seat = []
     context = {}
     theater = request.GET.get("theater_screen")
+    print theater
     movie = request.Get.get("movie_screen")
+    print movie
     show = request.Get.get("show_screen")
     date = request.Get.get("date_screen")
     # print theater

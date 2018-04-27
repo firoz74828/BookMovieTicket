@@ -34,12 +34,11 @@
                     <td class="detail_movies">
                         {% for show in Screen_Select %}
                         <form action="/seat-booking/" method="get">
-                            {% csrf_token %}
                                 {% if i.theater_screen_id == show.theater_screen_id %}
                                     <input type="hidden" id="theater_screen_id" name="theater_screen" value="{{show.theater_screen_id.id}}">
-                                    <input type="hidden" id="date_screen_id" name="movie_screen" value="{{show.movie_screen_id.id}}">
+                                    <input type="hidden" id="movie_screen_id" name="movie_screen" value="{{show.movie_screen_id.id}}">
                                     <input type="hidden" id="show_screen_id" name="show_screen" value="{{show.show_screen_id.id}}">
-                                    <input type="hidden" id="movie_screen_id" name="date_screen" value="{{show.date_screen_id.id}}" >
+                                    <input type="hidden" id="date_screen_id" name="date_screen" value="{{show.date_screen_id.id}}" >
                                     <button id="{{show.show_screen_id}}" class="btn btn-light booking_show">
                                         {{show.show_screen_id.show}}
                                     </button>
