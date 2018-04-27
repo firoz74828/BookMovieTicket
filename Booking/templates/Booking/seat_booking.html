@@ -17,7 +17,7 @@
                                             {% else %}
                                                 onclick="myFunction(this);"
                                             {% endif %}>
-                            {{id}}
+                            {{forloop.counter}}
                         </button>
                      </div>
                     {% if forloop.counter|divisibleby:5 %}
