@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
 
@@ -68,34 +68,24 @@ span.psw {
 </head>
 <body>
 
-{% block content %}
-<div align="center" class="center-login">
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        <div class="imgcontainer">
-        </div>
+<h2>Login</h2>
+<div  class="container" style="width:20%;" align="center">
+    <form action="/movie-list/">
 
-  <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+      <div class="container">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
 
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-        <input type="hidden" name="next" value="{{ next }}" />
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
     </form>
-</div>
+    </div>
 
-{% endblock %}
-</body>
+    </body>
 </html>
