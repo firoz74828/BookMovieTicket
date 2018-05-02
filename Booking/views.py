@@ -225,6 +225,7 @@ class UserBookings(LoginRequiredMixin, ListView):
     template_name = 'Booking/user_booking.html'
     paginate_by = 10
     def get_queryset(self):
+
         theater = self.request.GET.get('theater_id')
         movie = self.request.GET.get('movie_id')
         show = self.request.GET.get('show_id')
