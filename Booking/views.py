@@ -243,7 +243,7 @@ class UserBookings(LoginRequiredMixin, ListView):
         if queryset:
             return queryset
         elif theater is None and movie is None and show is None and  date is None:
-            return Booking.objects.filter(user=self.request.user)
+            return Booking.objects.filter(user=self.request.user)   
         else:
             return queryset
 
@@ -256,6 +256,7 @@ class UserBookings(LoginRequiredMixin, ListView):
         context['date_list'] = queryset.values('date_id', 'date_id__date').distinct()
         return context
 
-
+@login_required()
 def Seat_Confirmed(request):
-    return render(request, "Booking/seat_book_success.html")
+    x = {}
+    return render(request, "Booking/seat_book_success.html", {"x":x})
