@@ -257,5 +257,5 @@ class UserBookings(LoginRequiredMixin, ListView):
         return context
 
 @login_required()
-def Seat_Confirmed(self):
-    return render(self.request, "Booking/seat_book_success.html")
+def Seat_Confirmed(request):
+    return render(request, "Booking/seat_book_success.html")
