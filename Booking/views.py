@@ -255,3 +255,7 @@ class UserBookings(LoginRequiredMixin, ListView):
         context['show_list'] = queryset.values('show_id', 'show_id__show').distinct()
         context['date_list'] = queryset.values('date_id', 'date_id__date').distinct()
         return context
+
+
+def Seat_Confirmed(request):
+    return render(request, "seat_book_success.html")

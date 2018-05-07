@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^booking-create/$', views.booking_create, name='booking-create'),
     url(r'^movie-list-detail/(?P<pk>\d+)/$', Movie_DetailView.as_view(), name='movie-list-detail'),
     url(r'^user-booking/$', UserBookings.as_view(), name = "user-booking"),
+    url(r'^seat-confirmed/$', views.Seat_Confirmed(), name = 'seat-confirmed'),
 
 
 ]
